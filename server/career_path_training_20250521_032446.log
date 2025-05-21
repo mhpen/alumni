@@ -1,0 +1,55 @@
+2025-05-21 03:24:46,465 - __main__ - INFO - Starting Career Path Prediction model training
+2025-05-21 03:24:46,465 - __main__ - INFO - Training data: ../alumni-dataset/career/bsu_train_data.csv
+2025-05-21 03:24:46,465 - __main__ - INFO - Test data: ../alumni-dataset/career/bsu_test_data.csv
+2025-05-21 03:24:46,465 - __main__ - INFO - Validation data: ../alumni-dataset/career/bsu_validation_data.csv
+2025-05-21 03:24:46,465 - __main__ - INFO - Target column: actual_job_title
+2025-05-21 03:24:46,465 - __main__ - INFO - Log directory: career_logs
+2025-05-21 03:24:46,465 - __main__ - INFO - Model directory: career_models
+2025-05-21 03:24:46,480 - __main__ - INFO - Loading datasets...
+2025-05-21 03:24:46,537 - __main__ - INFO - Train dataset shape: (7000, 19)
+2025-05-21 03:24:46,537 - __main__ - INFO - Test dataset shape: (1500, 19)
+2025-05-21 03:24:46,537 - __main__ - INFO - Validation dataset shape: (1500, 19)
+2025-05-21 03:24:46,537 - __main__ - INFO - Cleaning data...
+2025-05-21 03:24:46,630 - __main__ - INFO - Data cleaning completed. Shape: (7000, 22)
+2025-05-21 03:24:46,631 - __main__ - INFO - Cleaning data...
+2025-05-21 03:24:46,652 - __main__ - INFO - Data cleaning completed. Shape: (1500, 22)
+2025-05-21 03:24:46,652 - __main__ - INFO - Cleaning data...
+2025-05-21 03:24:46,673 - __main__ - INFO - Data cleaning completed. Shape: (1500, 22)
+2025-05-21 03:24:46,673 - __main__ - INFO - Extracting features for career path prediction...
+2025-05-21 03:24:46,682 - __main__ - INFO - Features extracted: ['age', 'gender', 'graduation_year', 'degree', 'major', 'gpa', 'internship_experience', 'location', 'employed_after_grad', 'skills_count', 'skills_used_count', 'skills_match', 'time_to_employment', 'industry', 'company_type', 'salary_range']
+2025-05-21 03:24:46,683 - __main__ - INFO - Extracting features for career path prediction...
+2025-05-21 03:24:46,685 - __main__ - INFO - Features extracted: ['age', 'gender', 'graduation_year', 'degree', 'major', 'gpa', 'internship_experience', 'location', 'employed_after_grad', 'skills_count', 'skills_used_count', 'skills_match', 'time_to_employment', 'industry', 'company_type', 'salary_range']
+2025-05-21 03:24:46,685 - __main__ - INFO - Extracting features for career path prediction...
+2025-05-21 03:24:46,687 - __main__ - INFO - Features extracted: ['age', 'gender', 'graduation_year', 'degree', 'major', 'gpa', 'internship_experience', 'location', 'employed_after_grad', 'skills_count', 'skills_used_count', 'skills_match', 'time_to_employment', 'industry', 'company_type', 'salary_range']
+2025-05-21 03:24:46,688 - __main__ - INFO - Creating preprocessor for career path data...
+2025-05-21 03:24:46,689 - __main__ - INFO - Numeric features: ['age', 'graduation_year', 'gpa', 'skills_count', 'skills_used_count', 'skills_match', 'time_to_employment']
+2025-05-21 03:24:46,690 - __main__ - INFO - Categorical features: ['gender', 'degree', 'major', 'internship_experience', 'location', 'employed_after_grad', 'industry', 'company_type', 'salary_range']
+2025-05-21 03:24:46,690 - __main__ - INFO - Preprocessor created successfully
+2025-05-21 03:24:46,756 - __main__ - INFO - Number of classes: 11
+2025-05-21 03:24:46,758 - __main__ - INFO - Model preprocessor saved to career_models\preprocessor_model.pkl
+2025-05-21 03:24:46,760 - __main__ - INFO - Model label_encoder saved to career_models\label_encoder_model.pkl
+2025-05-21 03:24:46,760 - __main__ - INFO - Training Random Forest model...
+2025-05-21 03:24:47,353 - __main__ - INFO - Random Forest training time: 0.59 seconds
+2025-05-21 03:24:47,468 - __main__ - INFO - Random Forest - Accuracy: 0.5287, Precision: 0.1810, Recall: 0.1802, F1: 0.1805
+2025-05-21 03:24:47,560 - __main__ - INFO - Training XGBoost model...
+2025-05-21 03:24:50,406 - __main__ - INFO - XGBoost training time: 2.85 seconds
+2025-05-21 03:24:50,425 - __main__ - INFO - XGBoost - Accuracy: 0.5300, Precision: 0.1833, Recall: 0.1826, F1: 0.1826
+2025-05-21 03:24:50,437 - __main__ - INFO - Training Logistic Regression model...
+2025-05-21 03:24:53,520 - __main__ - INFO - Logistic Regression training time: 3.08 seconds
+2025-05-21 03:24:53,554 - __main__ - INFO - Logistic Regression - Accuracy: 0.5287, Precision: 0.1801, Recall: 0.1789, F1: 0.1786
+2025-05-21 03:24:53,962 - __main__ - INFO - Model random_forest saved to career_models\random_forest_model.pkl
+2025-05-21 03:24:54,057 - __main__ - INFO - Model xgboost saved to career_models\xgboost_model.pkl
+2025-05-21 03:24:54,059 - __main__ - INFO - Model logistic_regression saved to career_models\logistic_regression_model.pkl
+2025-05-21 03:24:54,750 - __main__ - INFO - Feature importance plot saved to career_logs\plots\random_forest_feature_importance.png
+2025-05-21 03:24:55,320 - __main__ - INFO - Feature importance plot saved to career_logs\plots\xgboost_feature_importance.png
+2025-05-21 03:24:55,873 - __main__ - INFO - Feature importance plot saved to career_logs\plots\logistic_regression_feature_importance.png
+2025-05-21 03:24:56,537 - __main__ - INFO - Confusion matrix plot saved to career_logs\plots\random_forest_confusion_matrix.png
+2025-05-21 03:24:57,168 - __main__ - INFO - Confusion matrix plot saved to career_logs\plots\xgboost_confusion_matrix.png
+2025-05-21 03:24:57,787 - __main__ - INFO - Confusion matrix plot saved to career_logs\plots\logistic_regression_confusion_matrix.png
+2025-05-21 03:24:57,787 - __main__ - INFO - Best model: xgboost
+2025-05-21 03:24:57,787 - __main__ - INFO - Model performance summary:
+2025-05-21 03:24:57,787 - __main__ - INFO -   random_forest: Accuracy = 0.5287, F1 = 0.1805
+2025-05-21 03:24:57,787 - __main__ - INFO -   xgboost: Accuracy = 0.5300, F1 = 0.1826
+2025-05-21 03:24:57,787 - __main__ - INFO -   logistic_regression: Accuracy = 0.5287, F1 = 0.1786
+2025-05-21 03:24:57,787 - __main__ - INFO - Training results saved to career_logs\training_results.json
+2025-05-21 03:24:57,787 - __main__ - INFO - Career Path Prediction model training completed successfully

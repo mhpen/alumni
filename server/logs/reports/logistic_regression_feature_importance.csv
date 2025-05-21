@@ -1,0 +1,146 @@
+feature,importance
+cat__degree_Bachelor of Science,0.7667456614401842
+cat__degree_Bachelor of Arts,0.6496846834798408
+cat__degree_Bachelor of Industrial Technology,0.5668002005129968
+cat__degree_Bachelor of Secondary Education,0.5396172633818848
+cat__major_English,0.4601093635846771
+cat__degree_Bachelor of Science in Agriculture,0.4451598629130315
+cat__major_Mathematics,0.43830053124202467
+num__num_skills,0.4048785361015951
+cat__major_Computer Science,0.39737580762586155
+cat__major_Information Technology,0.3862144387463134
+cat__major_Biology,0.3826710013427671
+cat__major_Political Science,0.3643504553034508
+cat__major_Communication,0.36284712427931004
+cat__major_Physics,0.3608754659609931
+cat__major_Filipino,0.3518232445971666
+cat__major_Nursing,0.327786582772171
+cat__degree_Bachelor of Science in Nursing,0.327786582772171
+cat__major_Electronics Technology,0.3024666425596524
+cat__major_Public Administration,0.2974720707531423
+cat__degree_Bachelor of Public Administration,0.2974720707531423
+cat__major_Electrical Technology,0.2972125122968444
+cat__major_Automotive Technology,0.2968374333986861
+cat__degree_Bachelor of Science in Criminology,0.2959352754775448
+cat__major_Criminology,0.2959352754775448
+cat__major_Agronomy,0.29466920771902566
+cat__major_Animal Science,0.294388911847714
+cat__major_Social Studies,0.2841827285005273
+cat__degree_Bachelor of Elementary Education,0.18003846165600193
+cat__major_General Education,0.18003846165600193
+cat__internship_experience_No,0.17172930266122646
+cat__major_Science,0.16449776391880783
+"cat__skills_Microcontrollers, Soldering",0.1582922922430147
+cat__internship_experience_Yes,0.15499569567844218
+"cat__skills_Geography, History",0.15463167665941077
+"cat__skills_Circuit Design, Wiring",0.152478192255279
+"cat__skills_Animal Care, Feeding Management",0.15243255692728006
+"cat__skills_Law Enforcement, Crime Scene Investigation",0.15181118137334745
+"cat__skills_Crop Management, Soil Analysis",0.15048788165066979
+"cat__skills_Governance, Budgeting",0.1498939769788731
+"cat__skills_Engine Repair, Diagnostics",0.14891347010779074
+"cat__skills_History, Geography",0.14813202178855767
+"cat__skills_Diagnostics, Engine Repair",0.14792396329089705
+"cat__skills_Budgeting, Governance",0.14757809377426978
+"cat__skills_Soldering, Microcontrollers",0.14670666914754152
+"cat__skills_Wiring, Circuit Design",0.14644272864207591
+"cat__skills_Soil Analysis, Crop Management",0.14418132606835768
+"cat__skills_Crime Scene Investigation, Law Enforcement",0.1441240941041967
+cat__skills_General Skills,0.14390637829682157
+"cat__skills_Feeding Management, Animal Care",0.143673065075283
+num__gpa,0.1300946858453577
+"cat__skills_Editing, Writing",0.12388344416745008
+"cat__skills_Writing, Editing",0.11574300671490281
+"cat__skills_CSS, Python",0.10603671197853995
+num__graduation_year,0.10503766562048401
+"cat__skills_Statistics, Mathematica",0.09558397098586295
+"cat__skills_Statistics, Data Analysis",0.09183504127544294
+"cat__skills_Writing, Teaching",0.09065030821790816
+cat__gender_Male,0.08826078435564677
+"cat__skills_Lab Equipment, Simulation",0.08809829710138598
+"cat__skills_CSS, Java",0.08438232307985255
+cat__gender_Female,0.08361532642314275
+"cat__skills_Literary Analysis, Writing",0.08316456447962654
+"cat__skills_Mathematica, Statistics",0.07978265333674879
+"cat__skills_Lab Techniques, Data Analysis",0.07701653901957865
+"cat__skills_Lab Equipment, Quantum Mechanics",0.07610547946689936
+"cat__skills_Data Analysis, Lab Techniques",0.07560156586935862
+"cat__skills_Teaching, Translation",0.07535849071670164
+"cat__skills_Literary Analysis, Editing",0.07467654761215978
+"cat__skills_Mathematica, Data Analysis",0.07434360498974871
+"cat__skills_Data Analysis, Statistics",0.07219273178620082
+"cat__skills_C++, Algorithms",0.07170790690678075
+"cat__skills_Translation, Writing",0.0705003366327076
+"cat__skills_Writing, Literary Analysis",0.06949918350708532
+"cat__skills_Vitals Monitoring, First Aid",0.06946503211858401
+"cat__skills_Quantum Mechanics, Lab Equipment",0.06846899193675719
+"cat__skills_Editing, Literary Analysis",0.06843332432929339
+"cat__skills_Editing, Public Speaking",0.0671659086506273
+"cat__skills_Data Analysis, Mathematica",0.06652768983311848
+"cat__skills_Public Speaking, Policy Analysis",0.06624124134526412
+"cat__skills_Simulation, Lab Equipment",0.06617300072609153
+"cat__skills_Policy Analysis, Research",0.06586671274346831
+"cat__skills_Research, Public Speaking",0.06464603888323196
+"cat__skills_Policy Analysis, Public Speaking",0.06399805485796535
+"cat__skills_Writing, Public Speaking",0.063677939373128
+"cat__skills_Quantum Mechanics, Simulation",0.061938371779898756
+"cat__skills_Simulation, Quantum Mechanics",0.06167652074721445
+"cat__skills_Public Speaking, Research",0.06066284495867665
+"cat__skills_HTML, Python",0.05956997590708134
+"cat__skills_Java, Data Structures",0.05949165853544728
+"cat__skills_Research, Policy Analysis",0.058144249662271906
+"cat__skills_Patient Care, Vitals Monitoring",0.05811660059790696
+"cat__skills_Patient Care, First Aid",0.05808068641451617
+"cat__skills_Java, C++",0.05767243280965025
+"cat__skills_CSS, SQL",0.05709275044796046
+"cat__skills_Translation, Teaching",0.057070406974422325
+"cat__skills_First Aid, Patient Care",0.056176326170296914
+"cat__skills_PCR, Data Analysis",0.05548849583679004
+"cat__skills_Public Speaking, Editing",0.05487075532434608
+"cat__skills_Writing, Translation",0.054594201257083336
+"cat__skills_First Aid, Vitals Monitoring",0.05308972606134148
+"cat__skills_PCR, Lab Techniques",0.0526612101581179
+"cat__skills_HTML, Java",0.05244191037139584
+"cat__skills_Teaching, Writing",0.05229660433073696
+"cat__skills_Microscopy, Data Analysis",0.051960711728540714
+"cat__skills_Algorithms, Java",0.05188990920709274
+"cat__skills_Vitals Monitoring, Patient Care",0.050945333498982406
+"cat__skills_Data Structures, C++",0.050899227235974585
+"cat__skills_Public Speaking, Writing",0.05089844204240942
+"cat__skills_CSS, HTML",0.04984868612330059
+"cat__skills_Algorithms, Machine Learning",0.048521198118886666
+"cat__skills_Java, Algorithms",0.047516379583052236
+"cat__skills_Python, CSS",0.04549847874269314
+"cat__skills_SQL, CSS",0.04380806515248725
+"cat__skills_Algorithms, Data Structures",0.043654235882965214
+"cat__skills_Algorithms, C++",0.0431792928508656
+"cat__skills_Java, Python",0.04087661322080812
+"cat__skills_Java, SQL",0.03944335384620579
+"cat__skills_Microscopy, PCR",0.03864857899854701
+"cat__skills_PCR, Microscopy",0.038639896964341926
+"cat__skills_Lab Techniques, PCR",0.03771260638913265
+"cat__skills_Microscopy, Lab Techniques",0.03757392966807993
+"cat__skills_Data Analysis, PCR",0.03606778260563613
+"cat__skills_Machine Learning, C++",0.03572939893520523
+"cat__skills_Lab Techniques, Microscopy",0.03463317133618932
+"cat__skills_Data Structures, Algorithms",0.03398810415428085
+"cat__skills_Java, Machine Learning",0.03143064445098212
+"cat__skills_Data Analysis, Microscopy",0.02788979122878113
+"cat__skills_Python, Java",0.027489185325827427
+"cat__skills_SQL, HTML",0.027139582598531047
+"cat__skills_Machine Learning, Java",0.026931442577107625
+"cat__skills_Java, HTML",0.02498709593006872
+"cat__skills_HTML, CSS",0.023816299206196552
+"cat__skills_Data Structures, Java",0.023129484334003546
+"cat__skills_C++, Java",0.022329331861800823
+"cat__skills_Python, HTML",0.021854138459819806
+"cat__skills_Machine Learning, Algorithms",0.020906053047785027
+"cat__skills_Python, SQL",0.02087260420176772
+"cat__skills_C++, Machine Learning",0.020482286133171008
+"cat__skills_Machine Learning, Data Structures",0.018899484589231946
+"cat__skills_SQL, Java",0.018857659014023153
+"cat__skills_HTML, SQL",0.018837485758807088
+"cat__skills_Java, CSS",0.016648863003654518
+"cat__skills_Data Structures, Machine Learning",0.014456373737265419
+"cat__skills_SQL, Python",0.013391409047673341
+"cat__skills_C++, Data Structures",0.008354961307883216

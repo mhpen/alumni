@@ -1,0 +1,135 @@
+2025-05-21 03:19:14,079 - src.models.prediction.model_logger - INFO - ModelLogger initialized with log directory: enhanced_logs
+2025-05-21 03:19:14,194 - src.models.prediction.model_logger - INFO - Logging preprocessing information...
+2025-05-21 03:19:14,195 - src.models.prediction.model_logger - INFO - Training data shape: (7000, 8)
+2025-05-21 03:19:14,195 - src.models.prediction.model_logger - INFO - Test data shape: (1500, 8)
+2025-05-21 03:19:14,195 - src.models.prediction.model_logger - INFO - Validation data shape: (1500, 8)
+2025-05-21 03:19:14,195 - src.models.prediction.model_logger - INFO - Class distribution: {'Agronomy Specialist': np.int64(225), 'Animal Science Specialist': np.int64(206), 'Automotive Technology Specialist': np.int64(142), 'Biology Specialist': np.int64(94), 'Communication Specialist': np.int64(108), 'Computer Science Specialist': np.int64(98), 'Criminology Specialist': np.int64(469), 'Electrical Technology Specialist': np.int64(125), 'Electronics Technology Specialist': np.int64(157), 'English Specialist': np.int64(202), 'Filipino Specialist': np.int64(103), 'General Education Specialist': np.int64(459), 'Information Technology Specialist': np.int64(81), 'Mathematics Specialist': np.int64(186), 'Nursing Specialist': np.int64(472), 'Physics Specialist': np.int64(73), 'Political Science Specialist': np.int64(129), 'Public Administration Specialist': np.int64(450), 'Science Specialist': np.int64(94), 'Social Studies Specialist': np.int64(108), 'Unemployed': np.int64(3019)}
+2025-05-21 03:19:14,196 - src.models.prediction.model_logger - INFO - Class names saved to enhanced_logs\reports\class_names.json
+2025-05-21 03:19:15,599 - src.models.prediction.model_logger - INFO - Logging training information for random_forest...
+2025-05-21 03:19:15,599 - src.models.prediction.model_logger - INFO - Model parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 300, 'n_jobs': -1, 'oob_score': False, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+2025-05-21 03:19:15,599 - src.models.prediction.model_logger - INFO - Training time: 1.38 seconds
+2025-05-21 03:19:15,599 - src.models.prediction.model_logger - INFO - Model parameters saved to enhanced_logs\reports\random_forest_params.json
+2025-05-21 03:19:15,683 - src.models.prediction.model_logger - INFO - Logging evaluation results for random_forest...
+2025-05-21 03:19:15,692 - src.models.prediction.model_logger - INFO - Classification report for random_forest:
+2025-05-21 03:19:15,693 - src.models.prediction.model_logger - INFO - Accuracy: 0.6340
+2025-05-21 03:19:15,693 - src.models.prediction.model_logger - INFO - Macro avg precision: 0.6768
+2025-05-21 03:19:15,693 - src.models.prediction.model_logger - INFO - Macro avg recall: 0.6873
+2025-05-21 03:19:15,693 - src.models.prediction.model_logger - INFO - Macro avg F1-score: 0.6760
+2025-05-21 03:19:15,694 - src.models.prediction.model_logger - INFO - Classification report saved to enhanced_logs\reports\random_forest_report.json
+2025-05-21 03:19:16,644 - src.models.prediction.model_logger - INFO - Confusion matrix plot saved to enhanced_logs\plots\random_forest_confusion_matrix.png
+2025-05-21 03:19:16,790 - src.models.prediction.model_logger - INFO - Logging feature importance for random_forest...
+2025-05-21 03:19:16,790 - src.models.prediction.model_logger - INFO - Top 10 features for random_forest:
+2025-05-21 03:19:16,790 - src.models.prediction.model_logger - INFO - feature_0: 0.0643
+2025-05-21 03:19:16,790 - src.models.prediction.model_logger - INFO - feature_17: 0.0381
+2025-05-21 03:19:16,790 - src.models.prediction.model_logger - INFO - feature_24: 0.0372
+2025-05-21 03:19:16,797 - src.models.prediction.model_logger - INFO - feature_15: 0.0364
+2025-05-21 03:19:16,797 - src.models.prediction.model_logger - INFO - feature_25: 0.0359
+2025-05-21 03:19:16,799 - src.models.prediction.model_logger - INFO - feature_22: 0.0352
+2025-05-21 03:19:16,800 - src.models.prediction.model_logger - INFO - feature_16: 0.0348
+2025-05-21 03:19:16,800 - src.models.prediction.model_logger - INFO - feature_21: 0.0337
+2025-05-21 03:19:16,801 - src.models.prediction.model_logger - INFO - feature_28: 0.0330
+2025-05-21 03:19:16,801 - src.models.prediction.model_logger - INFO - feature_27: 0.0322
+2025-05-21 03:19:16,805 - src.models.prediction.model_logger - INFO - Feature importance saved to enhanced_logs\reports\random_forest_feature_importance.csv
+2025-05-21 03:19:17,463 - src.models.prediction.model_logger - INFO - Feature importance plot saved to enhanced_logs\plots\random_forest_feature_importance.png
+2025-05-21 03:19:20,520 - src.models.prediction.model_logger - INFO - Logging training information for xgboost...
+2025-05-21 03:19:20,520 - src.models.prediction.model_logger - INFO - Model parameters: {'objective': 'multi:softprob', 'base_score': None, 'booster': None, 'callbacks': None, 'colsample_bylevel': None, 'colsample_bynode': None, 'colsample_bytree': 0.9, 'device': None, 'early_stopping_rounds': None, 'enable_categorical': False, 'eval_metric': None, 'feature_types': None, 'gamma': 0.1, 'grow_policy': None, 'importance_type': None, 'interaction_constraints': None, 'learning_rate': 0.1, 'max_bin': None, 'max_cat_threshold': None, 'max_cat_to_onehot': None, 'max_delta_step': None, 'max_depth': 6, 'max_leaves': None, 'min_child_weight': None, 'missing': nan, 'monotone_constraints': None, 'multi_strategy': None, 'n_estimators': 300, 'n_jobs': -1, 'num_parallel_tree': None, 'random_state': 42, 'reg_alpha': None, 'reg_lambda': None, 'sampling_method': None, 'scale_pos_weight': None, 'subsample': 0.9, 'tree_method': None, 'validate_parameters': None, 'verbosity': None}
+2025-05-21 03:19:20,520 - src.models.prediction.model_logger - INFO - Training time: 3.06 seconds
+2025-05-21 03:19:20,522 - src.models.prediction.model_logger - INFO - Model parameters saved to enhanced_logs\reports\xgboost_params.json
+2025-05-21 03:19:20,569 - src.models.prediction.model_logger - INFO - Logging evaluation results for xgboost...
+2025-05-21 03:19:20,577 - src.models.prediction.model_logger - INFO - Classification report for xgboost:
+2025-05-21 03:19:20,577 - src.models.prediction.model_logger - INFO - Accuracy: 0.6273
+2025-05-21 03:19:20,577 - src.models.prediction.model_logger - INFO - Macro avg precision: 0.6728
+2025-05-21 03:19:20,577 - src.models.prediction.model_logger - INFO - Macro avg recall: 0.6501
+2025-05-21 03:19:20,577 - src.models.prediction.model_logger - INFO - Macro avg F1-score: 0.6540
+2025-05-21 03:19:20,579 - src.models.prediction.model_logger - INFO - Classification report saved to enhanced_logs\reports\xgboost_report.json
+2025-05-21 03:19:21,352 - src.models.prediction.model_logger - INFO - Confusion matrix plot saved to enhanced_logs\plots\xgboost_confusion_matrix.png
+2025-05-21 03:19:21,367 - src.models.prediction.model_logger - INFO - Logging feature importance for xgboost...
+2025-05-21 03:19:21,369 - src.models.prediction.model_logger - INFO - Top 10 features for xgboost:
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_29: 0.1189
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_18: 0.0668
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_4: 0.0610
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_10: 0.0581
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_9: 0.0572
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_6: 0.0544
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_12: 0.0439
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_13: 0.0411
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_21: 0.0340
+2025-05-21 03:19:21,370 - src.models.prediction.model_logger - INFO - feature_14: 0.0312
+2025-05-21 03:19:21,374 - src.models.prediction.model_logger - INFO - Feature importance saved to enhanced_logs\reports\xgboost_feature_importance.csv
+2025-05-21 03:19:21,865 - src.models.prediction.model_logger - INFO - Feature importance plot saved to enhanced_logs\plots\xgboost_feature_importance.png
+2025-05-21 03:19:23,465 - src.models.prediction.model_logger - INFO - Logging training information for logistic_regression...
+2025-05-21 03:19:23,465 - src.models.prediction.model_logger - INFO - Model parameters: {'C': 10.0, 'class_weight': 'balanced', 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 2000, 'multi_class': 'multinomial', 'n_jobs': -1, 'penalty': 'l2', 'random_state': 42, 'solver': 'saga', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}
+2025-05-21 03:19:23,465 - src.models.prediction.model_logger - INFO - Training time: 1.60 seconds
+2025-05-21 03:19:23,468 - src.models.prediction.model_logger - INFO - Model parameters saved to enhanced_logs\reports\logistic_regression_params.json
+2025-05-21 03:19:23,468 - src.models.prediction.model_logger - INFO - Logging evaluation results for logistic_regression...
+2025-05-21 03:19:23,468 - src.models.prediction.model_logger - INFO - Classification report for logistic_regression:
+2025-05-21 03:19:23,468 - src.models.prediction.model_logger - INFO - Accuracy: 0.6007
+2025-05-21 03:19:23,468 - src.models.prediction.model_logger - INFO - Macro avg precision: 0.6039
+2025-05-21 03:19:23,468 - src.models.prediction.model_logger - INFO - Macro avg recall: 0.9525
+2025-05-21 03:19:23,468 - src.models.prediction.model_logger - INFO - Macro avg F1-score: 0.6988
+2025-05-21 03:19:23,476 - src.models.prediction.model_logger - INFO - Classification report saved to enhanced_logs\reports\logistic_regression_report.json
+2025-05-21 03:19:24,190 - src.models.prediction.model_logger - INFO - Confusion matrix plot saved to enhanced_logs\plots\logistic_regression_confusion_matrix.png
+2025-05-21 03:19:24,190 - src.models.prediction.model_logger - INFO - Logging feature importance for logistic_regression...
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - Top 10 features for logistic_regression:
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_7: 0.9756
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_3: 0.8683
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_5: 0.7881
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_11: 0.7343
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_21: 0.6820
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_25: 0.6595
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_17: 0.6220
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_8: 0.6201
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_24: 0.6153
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - feature_15: 0.6021
+2025-05-21 03:19:24,200 - src.models.prediction.model_logger - INFO - Feature importance saved to enhanced_logs\reports\logistic_regression_feature_importance.csv
+2025-05-21 03:19:24,707 - src.models.prediction.model_logger - INFO - Feature importance plot saved to enhanced_logs\plots\logistic_regression_feature_importance.png
+2025-05-21 03:20:29,516 - src.models.prediction.model_logger - INFO - Logging training information for gradient_boosting...
+2025-05-21 03:20:29,516 - src.models.prediction.model_logger - INFO - Model parameters: {'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'log_loss', 'max_depth': 5, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 5, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 300, 'n_iter_no_change': None, 'random_state': 42, 'subsample': 0.9, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2025-05-21 03:20:29,516 - src.models.prediction.model_logger - INFO - Training time: 64.81 seconds
+2025-05-21 03:20:29,526 - src.models.prediction.model_logger - INFO - Model parameters saved to enhanced_logs\reports\gradient_boosting_params.json
+2025-05-21 03:20:30,178 - src.models.prediction.model_logger - INFO - Logging evaluation results for gradient_boosting...
+2025-05-21 03:20:30,178 - src.models.prediction.model_logger - INFO - Classification report for gradient_boosting:
+2025-05-21 03:20:30,185 - src.models.prediction.model_logger - INFO - Accuracy: 0.6227
+2025-05-21 03:20:30,185 - src.models.prediction.model_logger - INFO - Macro avg precision: 0.6676
+2025-05-21 03:20:30,185 - src.models.prediction.model_logger - INFO - Macro avg recall: 0.6593
+2025-05-21 03:20:30,185 - src.models.prediction.model_logger - INFO - Macro avg F1-score: 0.6551
+2025-05-21 03:20:30,186 - src.models.prediction.model_logger - INFO - Classification report saved to enhanced_logs\reports\gradient_boosting_report.json
+2025-05-21 03:20:30,961 - src.models.prediction.model_logger - INFO - Confusion matrix plot saved to enhanced_logs\plots\gradient_boosting_confusion_matrix.png
+2025-05-21 03:20:31,150 - src.models.prediction.model_logger - INFO - Logging feature importance for gradient_boosting...
+2025-05-21 03:20:31,150 - src.models.prediction.model_logger - INFO - Top 10 features for gradient_boosting:
+2025-05-21 03:20:31,152 - src.models.prediction.model_logger - INFO - feature_0: 0.3069
+2025-05-21 03:20:31,152 - src.models.prediction.model_logger - INFO - feature_2: 0.1090
+2025-05-21 03:20:31,152 - src.models.prediction.model_logger - INFO - feature_26: 0.0594
+2025-05-21 03:20:31,152 - src.models.prediction.model_logger - INFO - feature_18: 0.0529
+2025-05-21 03:20:31,152 - src.models.prediction.model_logger - INFO - feature_32: 0.0494
+2025-05-21 03:20:31,152 - src.models.prediction.model_logger - INFO - feature_23: 0.0469
+2025-05-21 03:20:31,154 - src.models.prediction.model_logger - INFO - feature_33: 0.0373
+2025-05-21 03:20:31,154 - src.models.prediction.model_logger - INFO - feature_29: 0.0362
+2025-05-21 03:20:31,154 - src.models.prediction.model_logger - INFO - feature_12: 0.0262
+2025-05-21 03:20:31,154 - src.models.prediction.model_logger - INFO - feature_6: 0.0256
+2025-05-21 03:20:31,156 - src.models.prediction.model_logger - INFO - Feature importance saved to enhanced_logs\reports\gradient_boosting_feature_importance.csv
+2025-05-21 03:20:31,708 - src.models.prediction.model_logger - INFO - Feature importance plot saved to enhanced_logs\plots\gradient_boosting_feature_importance.png
+2025-05-21 03:21:39,042 - src.models.prediction.model_logger - INFO - Logging training information for neural_network...
+2025-05-21 03:21:39,042 - src.models.prediction.model_logger - INFO - Model parameters: {'activation': 'relu', 'alpha': 0.001, 'batch_size': 'auto', 'beta_1': 0.9, 'beta_2': 0.999, 'early_stopping': False, 'epsilon': 1e-08, 'hidden_layer_sizes': (200, 100, 50), 'learning_rate': 'adaptive', 'learning_rate_init': 0.001, 'max_fun': 15000, 'max_iter': 1000, 'momentum': 0.9, 'n_iter_no_change': 10, 'nesterovs_momentum': True, 'power_t': 0.5, 'random_state': 42, 'shuffle': True, 'solver': 'adam', 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': False, 'warm_start': False}
+2025-05-21 03:21:39,042 - src.models.prediction.model_logger - INFO - Training time: 67.33 seconds
+2025-05-21 03:21:39,047 - src.models.prediction.model_logger - INFO - Model parameters saved to enhanced_logs\reports\neural_network_params.json
+2025-05-21 03:21:39,049 - src.models.prediction.model_logger - INFO - Logging evaluation results for neural_network...
+2025-05-21 03:21:39,061 - src.models.prediction.model_logger - INFO - Classification report for neural_network:
+2025-05-21 03:21:39,062 - src.models.prediction.model_logger - INFO - Accuracy: 0.6393
+2025-05-21 03:21:39,062 - src.models.prediction.model_logger - INFO - Macro avg precision: 0.6846
+2025-05-21 03:21:39,062 - src.models.prediction.model_logger - INFO - Macro avg recall: 0.6549
+2025-05-21 03:21:39,062 - src.models.prediction.model_logger - INFO - Macro avg F1-score: 0.6605
+2025-05-21 03:21:39,064 - src.models.prediction.model_logger - INFO - Classification report saved to enhanced_logs\reports\neural_network_report.json
+2025-05-21 03:21:39,956 - src.models.prediction.model_logger - INFO - Confusion matrix plot saved to enhanced_logs\plots\neural_network_confusion_matrix.png
+2025-05-21 03:21:39,957 - src.models.prediction.model_logger - INFO - Logging training information for ensemble...
+2025-05-21 03:21:39,958 - src.models.prediction.model_logger - INFO - Model parameters: {'estimators': ['random_forest', 'xgboost', 'gradient_boosting', 'neural_network']}
+2025-05-21 03:21:39,958 - src.models.prediction.model_logger - INFO - Training time: 0.00 seconds
+2025-05-21 03:21:39,959 - src.models.prediction.model_logger - INFO - Model parameters saved to enhanced_logs\reports\ensemble_params.json
+2025-05-21 03:21:40,782 - src.models.prediction.model_logger - INFO - Logging evaluation results for ensemble...
+2025-05-21 03:21:40,782 - src.models.prediction.model_logger - INFO - Classification report for ensemble:
+2025-05-21 03:21:40,782 - src.models.prediction.model_logger - INFO - Accuracy: 0.6273
+2025-05-21 03:21:40,782 - src.models.prediction.model_logger - INFO - Macro avg precision: 0.6640
+2025-05-21 03:21:40,782 - src.models.prediction.model_logger - INFO - Macro avg recall: 0.6514
+2025-05-21 03:21:40,782 - src.models.prediction.model_logger - INFO - Macro avg F1-score: 0.6494
+2025-05-21 03:21:40,799 - src.models.prediction.model_logger - INFO - Classification report saved to enhanced_logs\reports\ensemble_report.json
+2025-05-21 03:21:41,579 - src.models.prediction.model_logger - INFO - Confusion matrix plot saved to enhanced_logs\plots\ensemble_confusion_matrix.png

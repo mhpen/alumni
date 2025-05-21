@@ -1,0 +1,967 @@
+2025-05-21 01:45:22,393 - __main__ - INFO - ==================================================
+2025-05-21 01:45:22,394 - __main__ - INFO - Starting all models training at 2025-05-21 01:45:22.394446
+2025-05-21 01:45:22,405 - __main__ - INFO - ==================================================
+2025-05-21 01:45:22,405 - __main__ - INFO - Training career path prediction models
+2025-05-21 01:45:22,405 - __main__ - INFO - ==================================================
+2025-05-21 01:45:22,405 - __main__ - INFO - Running command: C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\python.exe C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py --train ../alumni-dataset/bsu_career_train.csv --test ../alumni-dataset/bsu_career_test.csv
+2025-05-21 01:45:29,018 - __main__ - ERROR - Script C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py failed with return code 1
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:__main__:Starting career path models training at 2025-05-21 01:45:27.857366
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:__main__:Preparing data from ../alumni-dataset/bsu_career_train.csv
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Cleaning and enhancing career path data with shape: (7000, 19)
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Removed 3019 rows with missing job titles
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Performing feature engineering...
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Number of unique standardized job titles: 20
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Top 10 standardized job titles:
+2025-05-21 01:45:29,018 - __main__ - ERROR - standardized_job_title
+2025-05-21 01:45:29,018 - __main__ - ERROR - Nursing Specialist                   472
+2025-05-21 01:45:29,018 - __main__ - ERROR - Criminology Specialist               469
+2025-05-21 01:45:29,018 - __main__ - ERROR - General Education Specialist         459
+2025-05-21 01:45:29,018 - __main__ - ERROR - Public Administration Specialist     450
+2025-05-21 01:45:29,018 - __main__ - ERROR - Agronomy Specialist                  225
+2025-05-21 01:45:29,018 - __main__ - ERROR - Animal Science Specialist            206
+2025-05-21 01:45:29,018 - __main__ - ERROR - English Specialist                   202
+2025-05-21 01:45:29,018 - __main__ - ERROR - Mathematics Specialist               186
+2025-05-21 01:45:29,018 - __main__ - ERROR - Electronics Technology Specialist    157
+2025-05-21 01:45:29,018 - __main__ - ERROR - Automotive Technology Specialist     142
+2025-05-21 01:45:29,018 - __main__ - ERROR - Name: count, dtype: int64
+2025-05-21 01:45:29,018 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Cleaned data shape: (3981, 55)
+2025-05-21 01:45:29,018 - __main__ - ERROR - ERROR:__main__:Error preparing data: "['job_title'] not found in axis"
+2025-05-21 01:45:29,027 - __main__ - ERROR - ERROR:__main__:Error in main function: "['job_title'] not found in axis"
+2025-05-21 01:45:29,027 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 01:45:29,027 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py", line 383, in <module>
+2025-05-21 01:45:29,027 - __main__ - ERROR - main()
+2025-05-21 01:45:29,027 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py", line 349, in main
+2025-05-21 01:45:29,027 - __main__ - ERROR - X_train, X_test, y_train, y_test, categorical_features, numerical_features = prepare_career_path_data(
+2025-05-21 01:45:29,028 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:45:29,028 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py", line 83, in prepare_career_path_data
+2025-05-21 01:45:29,028 - __main__ - ERROR - X_train = train_data.drop([target_column], axis=1)
+2025-05-21 01:45:29,028 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:45:29,028 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+2025-05-21 01:45:29,028 - __main__ - ERROR - return super().drop(
+2025-05-21 01:45:29,028 - __main__ - ERROR - ^^^^^^^^^^^^^
+2025-05-21 01:45:29,028 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+2025-05-21 01:45:29,028 - __main__ - ERROR - obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+2025-05-21 01:45:29,028 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:45:29,028 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+2025-05-21 01:45:29,028 - __main__ - ERROR - new_axis = axis.drop(labels, errors=errors)
+2025-05-21 01:45:29,028 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:45:29,028 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+2025-05-21 01:45:29,028 - __main__ - ERROR - raise KeyError(f"{labels[mask].tolist()} not found in axis")
+2025-05-21 01:45:29,028 - __main__ - ERROR - KeyError: "['job_title'] not found in axis"
+2025-05-21 01:45:29,028 - __main__ - INFO - ==================================================
+2025-05-21 01:45:29,028 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 01:45:29,028 - __main__ - INFO - ==================================================
+2025-05-21 01:45:29,028 - __main__ - INFO - Running command: C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\python.exe C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py --train ../alumni-dataset/bsu_career_train.csv --test ../alumni-dataset/bsu_career_test.csv
+2025-05-21 01:45:33,833 - __main__ - ERROR - Script C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py failed with return code 1
+2025-05-21 01:45:33,833 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:__main__:Starting employment probability models training at 2025-05-21 01:45:32.496091
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:__main__:Preparing data from ../alumni-dataset/bsu_career_train.csv
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Cleaning and enhancing employment data with shape: (7000, 19)
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column time_to_employment has 3019 missing values
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column actual_job_title has 3019 missing values
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column industry has 3019 missing values
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column skills_used has 3019 missing values
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column company_type has 3019 missing values
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column salary_range has 3019 missing values
+2025-05-21 01:45:33,835 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Performing feature engineering...
+2025-05-21 01:45:33,835 - __main__ - ERROR - ERROR:__main__:Error preparing data: cannot access local variable 'np' where it is not associated with a value
+2025-05-21 01:45:33,835 - __main__ - ERROR - ERROR:__main__:Error in main function: cannot access local variable 'np' where it is not associated with a value
+2025-05-21 01:45:33,835 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 01:45:33,835 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py", line 376, in <module>
+2025-05-21 01:45:33,835 - __main__ - ERROR - main()
+2025-05-21 01:45:33,835 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py", line 342, in main
+2025-05-21 01:45:33,835 - __main__ - ERROR - X_train, X_test, y_train, y_test, categorical_features, numerical_features = prepare_employment_data(
+2025-05-21 01:45:33,835 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:45:33,835 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py", line 58, in prepare_employment_data
+2025-05-21 01:45:33,835 - __main__ - ERROR - train_data = clean_employment_data(train_data)
+2025-05-21 01:45:33,835 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:45:33,835 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\data_cleaner.py", line 164, in clean_employment_data
+2025-05-21 01:45:33,835 - __main__ - ERROR - if df['employed_after_grad'].dtype != bool and df['employed_after_grad'].dtype != np.bool_:
+2025-05-21 01:45:33,835 - __main__ - ERROR - ^^
+2025-05-21 01:45:33,840 - __main__ - ERROR - UnboundLocalError: cannot access local variable 'np' where it is not associated with a value
+2025-05-21 01:45:33,840 - __main__ - ERROR - Some models failed to train
+2025-05-21 01:45:33,840 - __main__ - ERROR - Career path models training failed
+2025-05-21 01:45:33,840 - __main__ - ERROR - Employment probability models training failed
+2025-05-21 01:45:33,840 - __main__ - INFO - All models training completed at 2025-05-21 01:45:33.840737
+2025-05-21 01:45:33,840 - __main__ - INFO - ==================================================
+2025-05-21 01:45:38,233 - __main__ - INFO - ==================================================
+2025-05-21 01:45:38,233 - __main__ - INFO - Starting all models training at 2025-05-21 01:45:38.233822
+2025-05-21 01:46:34,383 - __main__ - INFO - ==================================================
+2025-05-21 01:46:34,383 - __main__ - INFO - Starting all models training at 2025-05-21 01:46:34.383927
+2025-05-21 01:46:34,383 - __main__ - INFO - ==================================================
+2025-05-21 01:46:34,383 - __main__ - INFO - Training career path prediction models
+2025-05-21 01:46:34,383 - __main__ - INFO - ==================================================
+2025-05-21 01:46:34,383 - __main__ - INFO - Running command: C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\python.exe C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py --train ../alumni-dataset/bsu_career_train.csv --test ../alumni-dataset/bsu_career_test.csv
+2025-05-21 01:46:38,538 - __main__ - ERROR - Script C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py failed with return code 1
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:__main__:Starting career path models training at 2025-05-21 01:46:37.586442
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:__main__:Preparing data from ../alumni-dataset/bsu_career_train.csv
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Cleaning and enhancing career path data with shape: (7000, 19)
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Removed 3019 rows with missing job titles
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Performing feature engineering...
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Number of unique standardized job titles: 20
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Top 10 standardized job titles:
+2025-05-21 01:46:38,538 - __main__ - ERROR - standardized_job_title
+2025-05-21 01:46:38,538 - __main__ - ERROR - Nursing Specialist                   472
+2025-05-21 01:46:38,538 - __main__ - ERROR - Criminology Specialist               469
+2025-05-21 01:46:38,538 - __main__ - ERROR - General Education Specialist         459
+2025-05-21 01:46:38,538 - __main__ - ERROR - Public Administration Specialist     450
+2025-05-21 01:46:38,538 - __main__ - ERROR - Agronomy Specialist                  225
+2025-05-21 01:46:38,538 - __main__ - ERROR - Animal Science Specialist            206
+2025-05-21 01:46:38,538 - __main__ - ERROR - English Specialist                   202
+2025-05-21 01:46:38,538 - __main__ - ERROR - Mathematics Specialist               186
+2025-05-21 01:46:38,538 - __main__ - ERROR - Electronics Technology Specialist    157
+2025-05-21 01:46:38,538 - __main__ - ERROR - Automotive Technology Specialist     142
+2025-05-21 01:46:38,538 - __main__ - ERROR - Name: count, dtype: int64
+2025-05-21 01:46:38,538 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Cleaned data shape: (3981, 55)
+2025-05-21 01:46:38,538 - __main__ - ERROR - ERROR:__main__:Error preparing data: "['job_title'] not found in axis"
+2025-05-21 01:46:38,538 - __main__ - ERROR - ERROR:__main__:Error in main function: "['job_title'] not found in axis"
+2025-05-21 01:46:38,538 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 01:46:38,538 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py", line 383, in <module>
+2025-05-21 01:46:38,538 - __main__ - ERROR - main()
+2025-05-21 01:46:38,538 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py", line 349, in main
+2025-05-21 01:46:38,538 - __main__ - ERROR - X_train, X_test, y_train, y_test, categorical_features, numerical_features = prepare_career_path_data(
+2025-05-21 01:46:38,538 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:46:38,538 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py", line 83, in prepare_career_path_data
+2025-05-21 01:46:38,538 - __main__ - ERROR - X_train = train_data.drop([target_column], axis=1)
+2025-05-21 01:46:38,538 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:46:38,538 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+2025-05-21 01:46:38,538 - __main__ - ERROR - return super().drop(
+2025-05-21 01:46:38,538 - __main__ - ERROR - ^^^^^^^^^^^^^
+2025-05-21 01:46:38,538 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+2025-05-21 01:46:38,538 - __main__ - ERROR - obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+2025-05-21 01:46:38,538 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:46:38,538 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+2025-05-21 01:46:38,538 - __main__ - ERROR - new_axis = axis.drop(labels, errors=errors)
+2025-05-21 01:46:38,538 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:46:38,538 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+2025-05-21 01:46:38,538 - __main__ - ERROR - raise KeyError(f"{labels[mask].tolist()} not found in axis")
+2025-05-21 01:46:38,538 - __main__ - ERROR - KeyError: "['job_title'] not found in axis"
+2025-05-21 01:46:38,538 - __main__ - INFO - ==================================================
+2025-05-21 01:46:38,538 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 01:46:38,538 - __main__ - INFO - ==================================================
+2025-05-21 01:46:38,538 - __main__ - INFO - Running command: C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\python.exe C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py --train ../alumni-dataset/bsu_career_train.csv --test ../alumni-dataset/bsu_career_test.csv
+2025-05-21 01:46:42,985 - __main__ - ERROR - Script C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py failed with return code 1
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:__main__:Starting employment probability models training at 2025-05-21 01:46:41.685518
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:__main__:Preparing data from ../alumni-dataset/bsu_career_train.csv
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Cleaning and enhancing employment data with shape: (7000, 19)
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column time_to_employment has 3019 missing values
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column actual_job_title has 3019 missing values
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column industry has 3019 missing values
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column skills_used has 3019 missing values
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column company_type has 3019 missing values
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column salary_range has 3019 missing values
+2025-05-21 01:46:42,985 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Performing feature engineering...
+2025-05-21 01:46:42,985 - __main__ - ERROR - ERROR:__main__:Error preparing data: cannot access local variable 'np' where it is not associated with a value
+2025-05-21 01:46:42,985 - __main__ - ERROR - ERROR:__main__:Error in main function: cannot access local variable 'np' where it is not associated with a value
+2025-05-21 01:46:42,985 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 01:46:42,985 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py", line 376, in <module>
+2025-05-21 01:46:42,985 - __main__ - ERROR - main()
+2025-05-21 01:46:42,985 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py", line 342, in main
+2025-05-21 01:46:42,985 - __main__ - ERROR - X_train, X_test, y_train, y_test, categorical_features, numerical_features = prepare_employment_data(
+2025-05-21 01:46:42,985 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:46:42,985 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py", line 58, in prepare_employment_data
+2025-05-21 01:46:42,985 - __main__ - ERROR - train_data = clean_employment_data(train_data)
+2025-05-21 01:46:42,985 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:46:42,985 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\data_cleaner.py", line 164, in clean_employment_data
+2025-05-21 01:46:42,985 - __main__ - ERROR - if df['employed_after_grad'].dtype != bool and df['employed_after_grad'].dtype != np.bool_:
+2025-05-21 01:46:42,985 - __main__ - ERROR - ^^
+2025-05-21 01:46:42,985 - __main__ - ERROR - UnboundLocalError: cannot access local variable 'np' where it is not associated with a value
+2025-05-21 01:46:42,985 - __main__ - ERROR - Some models failed to train
+2025-05-21 01:46:42,985 - __main__ - ERROR - Career path models training failed
+2025-05-21 01:46:42,985 - __main__ - ERROR - Employment probability models training failed
+2025-05-21 01:46:42,985 - __main__ - INFO - All models training completed at 2025-05-21 01:46:42.985878
+2025-05-21 01:46:42,985 - __main__ - INFO - ==================================================
+2025-05-21 01:48:24,684 - __main__ - INFO - ==================================================
+2025-05-21 01:48:24,684 - __main__ - INFO - Starting all models training at 2025-05-21 01:48:24.684750
+2025-05-21 01:48:24,684 - __main__ - INFO - ==================================================
+2025-05-21 01:48:24,684 - __main__ - INFO - Training career path prediction models
+2025-05-21 01:48:24,684 - __main__ - INFO - ==================================================
+2025-05-21 01:48:24,684 - __main__ - INFO - Running command: C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\python.exe C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py --train ../alumni-dataset/bsu_career_train.csv --test ../alumni-dataset/bsu_career_test.csv
+2025-05-21 01:48:29,130 - __main__ - ERROR - Script C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py failed with return code 1
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:__main__:Starting career path models training at 2025-05-21 01:48:28.148815
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:__main__:Preparing data from ../alumni-dataset/bsu_career_train.csv
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Cleaning and enhancing career path data with shape: (7000, 19)
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Removed 3019 rows with missing job titles
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Performing feature engineering...
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Number of unique standardized job titles: 20
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Top 10 standardized job titles:
+2025-05-21 01:48:29,130 - __main__ - ERROR - standardized_job_title
+2025-05-21 01:48:29,130 - __main__ - ERROR - Nursing Specialist                   472
+2025-05-21 01:48:29,130 - __main__ - ERROR - Criminology Specialist               469
+2025-05-21 01:48:29,130 - __main__ - ERROR - General Education Specialist         459
+2025-05-21 01:48:29,130 - __main__ - ERROR - Public Administration Specialist     450
+2025-05-21 01:48:29,130 - __main__ - ERROR - Agronomy Specialist                  225
+2025-05-21 01:48:29,130 - __main__ - ERROR - Animal Science Specialist            206
+2025-05-21 01:48:29,130 - __main__ - ERROR - English Specialist                   202
+2025-05-21 01:48:29,130 - __main__ - ERROR - Mathematics Specialist               186
+2025-05-21 01:48:29,130 - __main__ - ERROR - Electronics Technology Specialist    157
+2025-05-21 01:48:29,130 - __main__ - ERROR - Automotive Technology Specialist     142
+2025-05-21 01:48:29,130 - __main__ - ERROR - Name: count, dtype: int64
+2025-05-21 01:48:29,130 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Cleaned data shape: (3981, 55)
+2025-05-21 01:48:29,130 - __main__ - ERROR - ERROR:__main__:Error preparing data: "['job_title'] not found in axis"
+2025-05-21 01:48:29,130 - __main__ - ERROR - ERROR:__main__:Error in main function: "['job_title'] not found in axis"
+2025-05-21 01:48:29,130 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 01:48:29,130 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py", line 383, in <module>
+2025-05-21 01:48:29,130 - __main__ - ERROR - main()
+2025-05-21 01:48:29,130 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py", line 349, in main
+2025-05-21 01:48:29,136 - __main__ - ERROR - X_train, X_test, y_train, y_test, categorical_features, numerical_features = prepare_career_path_data(
+2025-05-21 01:48:29,136 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:48:29,136 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py", line 83, in prepare_career_path_data
+2025-05-21 01:48:29,136 - __main__ - ERROR - X_train = train_data.drop([target_column], axis=1)
+2025-05-21 01:48:29,136 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:48:29,136 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\frame.py", line 5581, in drop
+2025-05-21 01:48:29,136 - __main__ - ERROR - return super().drop(
+2025-05-21 01:48:29,136 - __main__ - ERROR - ^^^^^^^^^^^^^
+2025-05-21 01:48:29,136 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\generic.py", line 4788, in drop
+2025-05-21 01:48:29,136 - __main__ - ERROR - obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+2025-05-21 01:48:29,136 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:48:29,136 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\generic.py", line 4830, in _drop_axis
+2025-05-21 01:48:29,136 - __main__ - ERROR - new_axis = axis.drop(labels, errors=errors)
+2025-05-21 01:48:29,137 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:48:29,137 - __main__ - ERROR - File "C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 7070, in drop
+2025-05-21 01:48:29,137 - __main__ - ERROR - raise KeyError(f"{labels[mask].tolist()} not found in axis")
+2025-05-21 01:48:29,137 - __main__ - ERROR - KeyError: "['job_title'] not found in axis"
+2025-05-21 01:48:29,137 - __main__ - INFO - ==================================================
+2025-05-21 01:48:29,137 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 01:48:29,137 - __main__ - INFO - ==================================================
+2025-05-21 01:48:29,137 - __main__ - INFO - Running command: C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\python.exe C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py --train ../alumni-dataset/bsu_career_train.csv --test ../alumni-dataset/bsu_career_test.csv
+2025-05-21 01:48:33,681 - __main__ - ERROR - Script C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py failed with return code 1
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:__main__:Starting employment probability models training at 2025-05-21 01:48:32.347035
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:__main__:Preparing data from ../alumni-dataset/bsu_career_train.csv
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Cleaning and enhancing employment data with shape: (7000, 19)
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column time_to_employment has 3019 missing values
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column actual_job_title has 3019 missing values
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column industry has 3019 missing values
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column skills_used has 3019 missing values
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column company_type has 3019 missing values
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Column salary_range has 3019 missing values
+2025-05-21 01:48:33,681 - __main__ - ERROR - INFO:models.prediction.data_cleaner:Performing feature engineering...
+2025-05-21 01:48:33,681 - __main__ - ERROR - ERROR:__main__:Error preparing data: cannot access local variable 'np' where it is not associated with a value
+2025-05-21 01:48:33,681 - __main__ - ERROR - ERROR:__main__:Error in main function: cannot access local variable 'np' where it is not associated with a value
+2025-05-21 01:48:33,681 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 01:48:33,681 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py", line 376, in <module>
+2025-05-21 01:48:33,681 - __main__ - ERROR - main()
+2025-05-21 01:48:33,681 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py", line 342, in main
+2025-05-21 01:48:33,681 - __main__ - ERROR - X_train, X_test, y_train, y_test, categorical_features, numerical_features = prepare_employment_data(
+2025-05-21 01:48:33,681 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:48:33,681 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_employment_models.py", line 58, in prepare_employment_data
+2025-05-21 01:48:33,681 - __main__ - ERROR - train_data = clean_employment_data(train_data)
+2025-05-21 01:48:33,681 - __main__ - ERROR - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 01:48:33,681 - __main__ - ERROR - File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\data_cleaner.py", line 164, in clean_employment_data
+2025-05-21 01:48:33,681 - __main__ - ERROR - if df['employed_after_grad'].dtype != bool and df['employed_after_grad'].dtype != np.bool_:
+2025-05-21 01:48:33,681 - __main__ - ERROR - ^^
+2025-05-21 01:48:33,681 - __main__ - ERROR - UnboundLocalError: cannot access local variable 'np' where it is not associated with a value
+2025-05-21 01:48:33,681 - __main__ - ERROR - Some models failed to train
+2025-05-21 01:48:33,681 - __main__ - ERROR - Career path models training failed
+2025-05-21 01:48:33,681 - __main__ - ERROR - Employment probability models training failed
+2025-05-21 01:48:33,681 - __main__ - INFO - All models training completed at 2025-05-21 01:48:33.681870
+2025-05-21 01:48:33,681 - __main__ - INFO - ==================================================
+2025-05-21 01:50:00,200 - __main__ - INFO - ==================================================
+2025-05-21 01:50:00,200 - __main__ - INFO - Starting all models training at 2025-05-21 01:50:00.200937
+2025-05-21 01:50:00,202 - __main__ - INFO - ==================================================
+2025-05-21 01:50:00,202 - __main__ - INFO - Training career path prediction models
+2025-05-21 01:50:00,202 - __main__ - INFO - ==================================================
+2025-05-21 01:50:00,202 - __main__ - INFO - Running command: C:\Users\mhrkp\AppData\Local\Programs\Python\Python312\python.exe C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_career_path_models.py --train ../alumni-dataset/bsu_career_train.csv --test ../alumni-dataset/bsu_career_test.csv
+2025-05-21 02:11:06,354 - __main__ - INFO - ==================================================
+2025-05-21 02:11:06,354 - __main__ - INFO - Starting all models training at 2025-05-21 02:11:06.354173
+2025-05-21 02:11:06,368 - __main__ - INFO - ==================================================
+2025-05-21 02:11:06,368 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:11:06,368 - __main__ - INFO - ==================================================
+2025-05-21 02:11:06,369 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:11:06,485 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:11:06,485 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 11, in <module>
+2025-05-21 02:11:06,485 - __main__ - ERROR -     import pandas as pd
+2025-05-21 02:11:06,485 - __main__ - ERROR - ModuleNotFoundError: No module named 'pandas'
+2025-05-21 02:11:06,485 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv failed with return code 1
+2025-05-21 02:11:06,485 - __main__ - INFO - ==================================================
+2025-05-21 02:11:06,485 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:11:06,485 - __main__ - INFO - ==================================================
+2025-05-21 02:11:06,485 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv
+2025-05-21 02:11:06,592 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:11:06,592 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 11, in <module>
+2025-05-21 02:11:06,592 - __main__ - ERROR -     import pandas as pd
+2025-05-21 02:11:06,592 - __main__ - ERROR - ModuleNotFoundError: No module named 'pandas'
+2025-05-21 02:11:06,592 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv failed with return code 1
+2025-05-21 02:11:06,592 - __main__ - ERROR - Some models failed to train
+2025-05-21 02:11:06,592 - __main__ - INFO - All models training completed at 2025-05-21 02:11:06.592410
+2025-05-21 02:11:06,592 - __main__ - INFO - ==================================================
+2025-05-21 02:13:33,102 - __main__ - INFO - ==================================================
+2025-05-21 02:13:33,102 - __main__ - INFO - Starting all models training at 2025-05-21 02:13:33.102991
+2025-05-21 02:13:33,115 - __main__ - INFO - ==================================================
+2025-05-21 02:13:33,115 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:13:33,115 - __main__ - INFO - ==================================================
+2025-05-21 02:13:33,115 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:13:45,007 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:13:45,007 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 25, in <module>
+2025-05-21 02:13:45,007 - __main__ - ERROR -     from models.prediction.enhanced_data_loader import prepare_career_path_data
+2025-05-21 02:13:45,007 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\__init__.py", line 6, in <module>
+2025-05-21 02:13:45,007 - __main__ - ERROR -     from .enhanced_model_manager import EnhancedModelManager
+2025-05-21 02:13:45,007 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_model_manager.py", line 8, in <module>
+2025-05-21 02:13:45,007 - __main__ - ERROR -     import matplotlib.pyplot as plt
+2025-05-21 02:13:45,007 - __main__ - ERROR - ModuleNotFoundError: No module named 'matplotlib'
+2025-05-21 02:13:45,007 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv failed with return code 1
+2025-05-21 02:13:45,023 - __main__ - INFO - ==================================================
+2025-05-21 02:13:45,023 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:13:45,023 - __main__ - INFO - ==================================================
+2025-05-21 02:13:45,023 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv
+2025-05-21 02:13:47,310 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:13:47,310 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 29, in <module>
+2025-05-21 02:13:47,310 - __main__ - ERROR -     from models.prediction.enhanced_data_loader import prepare_engagement_data
+2025-05-21 02:13:47,310 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\__init__.py", line 6, in <module>
+2025-05-21 02:13:47,310 - __main__ - ERROR -     from .enhanced_model_manager import EnhancedModelManager
+2025-05-21 02:13:47,315 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_model_manager.py", line 8, in <module>
+2025-05-21 02:13:47,315 - __main__ - ERROR -     import matplotlib.pyplot as plt
+2025-05-21 02:13:47,315 - __main__ - ERROR - ModuleNotFoundError: No module named 'matplotlib'
+2025-05-21 02:13:47,315 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv failed with return code 1
+2025-05-21 02:13:47,315 - __main__ - ERROR - Some models failed to train
+2025-05-21 02:13:47,315 - __main__ - INFO - All models training completed at 2025-05-21 02:13:47.315130
+2025-05-21 02:13:47,315 - __main__ - INFO - ==================================================
+2025-05-21 02:14:37,977 - __main__ - INFO - ==================================================
+2025-05-21 02:14:37,977 - __main__ - INFO - Starting all models training at 2025-05-21 02:14:37.977222
+2025-05-21 02:14:37,987 - __main__ - INFO - ==================================================
+2025-05-21 02:14:37,987 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:14:37,987 - __main__ - INFO - ==================================================
+2025-05-21 02:14:37,987 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:14:41,005 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:14:41,005 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 25, in <module>
+2025-05-21 02:14:41,005 - __main__ - ERROR -     from models.prediction.enhanced_data_loader import prepare_career_path_data
+2025-05-21 02:14:41,005 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\__init__.py", line 6, in <module>
+2025-05-21 02:14:41,005 - __main__ - ERROR -     from .enhanced_model_manager import EnhancedModelManager
+2025-05-21 02:14:41,005 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_model_manager.py", line 9, in <module>
+2025-05-21 02:14:41,005 - __main__ - ERROR -     import seaborn as sns
+2025-05-21 02:14:41,005 - __main__ - ERROR - ModuleNotFoundError: No module named 'seaborn'
+2025-05-21 02:14:41,005 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv failed with return code 1
+2025-05-21 02:14:41,005 - __main__ - INFO - ==================================================
+2025-05-21 02:14:41,005 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:14:41,005 - __main__ - INFO - ==================================================
+2025-05-21 02:14:41,005 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv
+2025-05-21 02:14:43,534 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:14:43,534 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 29, in <module>
+2025-05-21 02:14:43,534 - __main__ - ERROR -     from models.prediction.enhanced_data_loader import prepare_engagement_data
+2025-05-21 02:14:43,534 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\__init__.py", line 6, in <module>
+2025-05-21 02:14:43,534 - __main__ - ERROR -     from .enhanced_model_manager import EnhancedModelManager
+2025-05-21 02:14:43,534 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_model_manager.py", line 9, in <module>
+2025-05-21 02:14:43,534 - __main__ - ERROR -     import seaborn as sns
+2025-05-21 02:14:43,534 - __main__ - ERROR - ModuleNotFoundError: No module named 'seaborn'
+2025-05-21 02:14:43,534 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv failed with return code 1
+2025-05-21 02:14:43,534 - __main__ - ERROR - Some models failed to train
+2025-05-21 02:14:43,534 - __main__ - INFO - All models training completed at 2025-05-21 02:14:43.534132
+2025-05-21 02:14:43,534 - __main__ - INFO - ==================================================
+2025-05-21 02:15:08,523 - __main__ - INFO - ==================================================
+2025-05-21 02:15:08,523 - __main__ - INFO - Starting all models training at 2025-05-21 02:15:08.523853
+2025-05-21 02:15:08,523 - __main__ - INFO - ==================================================
+2025-05-21 02:15:08,523 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:15:08,523 - __main__ - INFO - ==================================================
+2025-05-21 02:15:08,523 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:15:10,882 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:15:10,882 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 25, in <module>
+2025-05-21 02:15:10,882 - __main__ - ERROR -     from models.prediction.enhanced_data_loader import prepare_career_path_data
+2025-05-21 02:15:10,882 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\__init__.py", line 6, in <module>
+2025-05-21 02:15:10,882 - __main__ - ERROR -     from .enhanced_model_manager import EnhancedModelManager
+2025-05-21 02:15:10,882 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_model_manager.py", line 16, in <module>
+2025-05-21 02:15:10,882 - __main__ - ERROR -     from .enhanced_employment_model import EnhancedEmploymentPredictor
+2025-05-21 02:15:10,882 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_employment_model.py", line 17, in <module>
+2025-05-21 02:15:10,882 - __main__ - ERROR -     import lightgbm as lgb
+2025-05-21 02:15:10,882 - __main__ - ERROR - ModuleNotFoundError: No module named 'lightgbm'
+2025-05-21 02:15:10,882 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv failed with return code 1
+2025-05-21 02:15:10,882 - __main__ - INFO - ==================================================
+2025-05-21 02:15:10,882 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:15:10,882 - __main__ - INFO - ==================================================
+2025-05-21 02:15:10,882 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv
+2025-05-21 02:15:13,634 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:15:13,634 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 29, in <module>
+2025-05-21 02:15:13,634 - __main__ - ERROR -     from models.prediction.enhanced_data_loader import prepare_engagement_data
+2025-05-21 02:15:13,634 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\__init__.py", line 6, in <module>
+2025-05-21 02:15:13,634 - __main__ - ERROR -     from .enhanced_model_manager import EnhancedModelManager
+2025-05-21 02:15:13,634 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_model_manager.py", line 16, in <module>
+2025-05-21 02:15:13,634 - __main__ - ERROR -     from .enhanced_employment_model import EnhancedEmploymentPredictor
+2025-05-21 02:15:13,634 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_employment_model.py", line 17, in <module>
+2025-05-21 02:15:13,634 - __main__ - ERROR -     import lightgbm as lgb
+2025-05-21 02:15:13,634 - __main__ - ERROR - ModuleNotFoundError: No module named 'lightgbm'
+2025-05-21 02:15:13,634 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv failed with return code 1
+2025-05-21 02:15:13,634 - __main__ - ERROR - Some models failed to train
+2025-05-21 02:15:13,634 - __main__ - INFO - All models training completed at 2025-05-21 02:15:13.634107
+2025-05-21 02:15:13,634 - __main__ - INFO - ==================================================
+2025-05-21 02:15:37,525 - __main__ - INFO - ==================================================
+2025-05-21 02:15:37,525 - __main__ - INFO - Starting all models training at 2025-05-21 02:15:37.525176
+2025-05-21 02:15:37,544 - __main__ - INFO - ==================================================
+2025-05-21 02:15:37,544 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:15:37,545 - __main__ - INFO - ==================================================
+2025-05-21 02:15:37,545 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:15:40,585 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:15:40,585 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 25, in <module>
+2025-05-21 02:15:40,585 - __main__ - ERROR -     from models.prediction.enhanced_data_loader import prepare_career_path_data
+2025-05-21 02:15:40,585 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\__init__.py", line 6, in <module>
+2025-05-21 02:15:40,591 - __main__ - ERROR -     from .enhanced_model_manager import EnhancedModelManager
+2025-05-21 02:15:40,591 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_model_manager.py", line 16, in <module>
+2025-05-21 02:15:40,591 - __main__ - ERROR -     from .enhanced_employment_model import EnhancedEmploymentPredictor
+2025-05-21 02:15:40,591 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_employment_model.py", line 28, in <module>
+2025-05-21 02:15:40,591 - __main__ - ERROR -     from imblearn.over_sampling import SMOTE
+2025-05-21 02:15:40,591 - __main__ - ERROR - ModuleNotFoundError: No module named 'imblearn'
+2025-05-21 02:15:40,591 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv failed with return code 1
+2025-05-21 02:15:40,591 - __main__ - INFO - ==================================================
+2025-05-21 02:15:40,591 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:15:40,591 - __main__ - INFO - ==================================================
+2025-05-21 02:15:40,591 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv
+2025-05-21 02:15:43,449 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:15:43,450 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 29, in <module>
+2025-05-21 02:15:43,450 - __main__ - ERROR -     from models.prediction.enhanced_data_loader import prepare_engagement_data
+2025-05-21 02:15:43,450 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\__init__.py", line 6, in <module>
+2025-05-21 02:15:43,451 - __main__ - ERROR -     from .enhanced_model_manager import EnhancedModelManager
+2025-05-21 02:15:43,451 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_model_manager.py", line 16, in <module>
+2025-05-21 02:15:43,451 - __main__ - ERROR -     from .enhanced_employment_model import EnhancedEmploymentPredictor
+2025-05-21 02:15:43,452 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_employment_model.py", line 28, in <module>
+2025-05-21 02:15:43,452 - __main__ - ERROR -     from imblearn.over_sampling import SMOTE
+2025-05-21 02:15:43,452 - __main__ - ERROR - ModuleNotFoundError: No module named 'imblearn'
+2025-05-21 02:15:43,452 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv failed with return code 1
+2025-05-21 02:15:43,452 - __main__ - ERROR - Some models failed to train
+2025-05-21 02:15:43,453 - __main__ - INFO - All models training completed at 2025-05-21 02:15:43.453539
+2025-05-21 02:15:43,453 - __main__ - INFO - ==================================================
+2025-05-21 02:17:16,465 - __main__ - INFO - ==================================================
+2025-05-21 02:17:16,466 - __main__ - INFO - Starting all models training at 2025-05-21 02:17:16.466582
+2025-05-21 02:17:16,479 - __main__ - INFO - ==================================================
+2025-05-21 02:17:16,480 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:17:16,480 - __main__ - INFO - ==================================================
+2025-05-21 02:17:16,481 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:17:22,858 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:17:22,858 - __main__ - ERROR - INFO:__main__:Starting individual career path models training at 2025-05-21 02:17:19.928195
+2025-05-21 02:17:22,858 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading career path data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:17:22,858 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:17:22,858 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Prepared career path data: 3981 training samples, 900 testing samples
+2025-05-21 02:17:22,858 - __main__ - ERROR - INFO:__main__:Training data shape: (3981, 15)
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:__main__:Testing data shape: (900, 15)
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:__main__:Training Random Forest model for Career Path Prediction...
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:__main__:Random Forest Career Path Prediction Metrics:
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:__main__:  Accuracy: 1.0000
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:__main__:  Precision: 1.0000
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:__main__:  Recall: 1.0000
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:__main__:  F1 Score: 1.0000
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved RandomForest model results for CareerPathPrediction to MongoDB with ID: 682cc731a6db74c8ad0d201c
+2025-05-21 02:17:22,874 - __main__ - ERROR - INFO:__main__:Training XGBoost model for Career Path Prediction...
+2025-05-21 02:17:22,874 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:17:22,874 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 442, in <module>
+2025-05-21 02:17:22,874 - __main__ - ERROR -     main()
+2025-05-21 02:17:22,874 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 393, in main
+2025-05-21 02:17:22,874 - __main__ - ERROR -     model, metrics, parameters, feature_importances = train_xgboost(
+2025-05-21 02:17:22,874 - __main__ - ERROR -                                                       ^^^^^^^^^^^^^^
+2025-05-21 02:17:22,874 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 190, in train_xgboost
+2025-05-21 02:17:22,878 - __main__ - ERROR -     pipeline.fit(X_train, y_train)
+2025-05-21 02:17:22,878 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+2025-05-21 02:17:22,878 - __main__ - ERROR -     return fit_method(estimator, *args, **kwargs)
+2025-05-21 02:17:22,878 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:17:22,879 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\pipeline.py", line 662, in fit
+2025-05-21 02:17:22,879 - __main__ - ERROR -     self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+2025-05-21 02:17:22,879 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+2025-05-21 02:17:22,879 - __main__ - ERROR -     return func(**kwargs)
+2025-05-21 02:17:22,879 - __main__ - ERROR -            ^^^^^^^^^^^^^^
+2025-05-21 02:17:22,879 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\xgboost\sklearn.py", line 1640, in fit
+2025-05-21 02:17:22,879 - __main__ - ERROR -     raise ValueError(
+2025-05-21 02:17:22,880 - __main__ - ERROR - ValueError: Invalid classes inferred from unique values of `y`.  Expected: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19], got ['Agronomy Specialist' 'Animal Science Specialist'
+2025-05-21 02:17:22,880 - __main__ - ERROR -  'Automotive Technology Specialist' 'Biology Specialist'
+2025-05-21 02:17:22,880 - __main__ - ERROR -  'Communication Specialist' 'Computer Science Specialist'
+2025-05-21 02:17:22,880 - __main__ - ERROR -  'Criminology Specialist' 'Electrical Technology Specialist'
+2025-05-21 02:17:22,880 - __main__ - ERROR -  'Electronics Technology Specialist' 'English Specialist'
+2025-05-21 02:17:22,880 - __main__ - ERROR -  'Filipino Specialist' 'General Education Specialist'
+2025-05-21 02:17:22,880 - __main__ - ERROR -  'Information Technology Specialist' 'Mathematics Specialist'
+2025-05-21 02:17:22,880 - __main__ - ERROR -  'Nursing Specialist' 'Physics Specialist' 'Political Science Specialist'
+2025-05-21 02:17:22,880 - __main__ - ERROR -  'Public Administration Specialist' 'Science Specialist'
+2025-05-21 02:17:22,881 - __main__ - ERROR -  'Social Studies Specialist']
+2025-05-21 02:17:22,881 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv failed with return code 1
+2025-05-21 02:17:22,882 - __main__ - INFO - ==================================================
+2025-05-21 02:17:22,882 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:17:22,882 - __main__ - INFO - ==================================================
+2025-05-21 02:17:22,882 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv
+2025-05-21 02:17:26,807 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:17:26,823 - __main__ - ERROR - INFO:__main__:Starting individual employment models training at 2025-05-21 02:17:26.389764
+2025-05-21 02:17:26,823 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading employment data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:17:26,823 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\test_employment.csv
+2025-05-21 02:17:26,823 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:17:26,823 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 534, in <module>
+2025-05-21 02:17:26,823 - __main__ - ERROR -     main()
+2025-05-21 02:17:26,823 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 453, in main
+2025-05-21 02:17:26,823 - __main__ - ERROR -     X_train, X_test, y_train, y_test = prepare_engagement_data(args.train, args.test)
+2025-05-21 02:17:26,823 - __main__ - ERROR -                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:17:26,823 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\models\prediction\enhanced_data_loader.py", line 290, in prepare_engagement_data
+2025-05-21 02:17:26,823 - __main__ - ERROR -     val_data = pd.read_csv(validation_file)
+2025-05-21 02:17:26,823 - __main__ - ERROR -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:17:26,823 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+2025-05-21 02:17:26,823 - __main__ - ERROR -     return _read(filepath_or_buffer, kwds)
+2025-05-21 02:17:26,823 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:17:26,823 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+2025-05-21 02:17:26,823 - __main__ - ERROR -     parser = TextFileReader(filepath_or_buffer, **kwds)
+2025-05-21 02:17:26,823 - __main__ - ERROR -              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:17:26,823 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+2025-05-21 02:17:26,823 - __main__ - ERROR -     self._engine = self._make_engine(f, self.engine)
+2025-05-21 02:17:26,823 - __main__ - ERROR -                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:17:26,823 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+2025-05-21 02:17:26,823 - __main__ - ERROR -     self.handles = get_handle(
+2025-05-21 02:17:26,823 - __main__ - ERROR -                    ^^^^^^^^^^^
+2025-05-21 02:17:26,823 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+2025-05-21 02:17:26,823 - __main__ - ERROR -     handle = open(
+2025-05-21 02:17:26,823 - __main__ - ERROR -              ^^^^^
+2025-05-21 02:17:26,823 - __main__ - ERROR - FileNotFoundError: [Errno 2] No such file or directory: '..\\alumni-dataset\\test_employment.csv'
+2025-05-21 02:17:26,823 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\test_employment.csv failed with return code 1
+2025-05-21 02:17:26,823 - __main__ - ERROR - Some models failed to train
+2025-05-21 02:17:26,823 - __main__ - INFO - All models training completed at 2025-05-21 02:17:26.823435
+2025-05-21 02:17:26,823 - __main__ - INFO - ==================================================
+2025-05-21 02:18:46,290 - __main__ - INFO - ==================================================
+2025-05-21 02:18:46,290 - __main__ - INFO - Starting all models training at 2025-05-21 02:18:46.290627
+2025-05-21 02:18:46,307 - __main__ - INFO - ==================================================
+2025-05-21 02:18:46,307 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:18:46,307 - __main__ - INFO - ==================================================
+2025-05-21 02:18:46,307 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:18:56,751 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:18:56,751 - __main__ - ERROR - INFO:__main__:Starting individual career path models training at 2025-05-21 02:18:49.370081
+2025-05-21 02:18:56,751 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading career path data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:18:56,751 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:18:56,751 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Prepared career path data: 3981 training samples, 900 testing samples
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:Training data shape: (3981, 15)
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:Testing data shape: (900, 15)
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:Training Random Forest model for Career Path Prediction...
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:Random Forest Career Path Prediction Metrics:
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  Accuracy: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  Precision: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  Recall: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  F1 Score: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved RandomForest model results for CareerPathPrediction to MongoDB with ID: 682cc78a82c32474da5dfe35
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:Training XGBoost model for Career Path Prediction...
+2025-05-21 02:18:56,756 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\xgboost\training.py:183: UserWarning: [02:18:51] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\learner.cc:738: 
+2025-05-21 02:18:56,756 - __main__ - ERROR - Parameters: { "use_label_encoder" } are not used.
+2025-05-21 02:18:56,756 - __main__ - ERROR - 
+2025-05-21 02:18:56,756 - __main__ - ERROR -   bst.update(dtrain, iteration=i, fobj=obj)
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:XGBoost Career Path Prediction Metrics:
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  Accuracy: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  Precision: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  Recall: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  F1 Score: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved XGBoost model results for CareerPathPrediction to MongoDB with ID: 682cc78d82c32474da5dfe37
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:Training Logistic Regression model for Career Path Prediction...
+2025-05-21 02:18:56,756 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\linear_model\_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+2025-05-21 02:18:56,756 - __main__ - ERROR -   warnings.warn(
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:Logistic Regression Career Path Prediction Metrics:
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  Accuracy: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  Precision: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  Recall: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:__main__:  F1 Score: 1.0000
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:18:56,756 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved LogisticRegression model results for CareerPathPrediction to MongoDB with ID: 682cc78f82c32474da5dfe39
+2025-05-21 02:18:56,762 - __main__ - ERROR - INFO:__main__:Training completed successfully
+2025-05-21 02:18:56,762 - __main__ - ERROR - INFO:__main__:Individual career path models training completed at 2025-05-21 02:18:55.753217
+2025-05-21 02:18:56,763 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:18:56,763 - __main__ - INFO - ==================================================
+2025-05-21 02:18:56,764 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:18:56,765 - __main__ - INFO - ==================================================
+2025-05-21 02:18:56,765 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:18:59,775 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:18:59,775 - __main__ - ERROR - INFO:__main__:Starting individual employment models training at 2025-05-21 02:18:59.233011
+2025-05-21 02:18:59,775 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading employment data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:18:59,775 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:18:59,775 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Prepared employment data: 7000 training samples, 1500 testing samples
+2025-05-21 02:18:59,775 - __main__ - ERROR - INFO:__main__:Training data shape: (7000, 16)
+2025-05-21 02:18:59,775 - __main__ - ERROR - INFO:__main__:Testing data shape: (1500, 16)
+2025-05-21 02:18:59,775 - __main__ - ERROR - INFO:__main__:Training Random Forest Regressor model for Employment Probability Post-Graduation...
+2025-05-21 02:18:59,775 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:18:59,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 534, in <module>
+2025-05-21 02:18:59,775 - __main__ - ERROR -     main()
+2025-05-21 02:18:59,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 465, in main
+2025-05-21 02:18:59,775 - __main__ - ERROR -     model, metrics, parameters, feature_importances = train_random_forest_regressor(
+2025-05-21 02:18:59,775 - __main__ - ERROR -                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:18:59,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py", line 90, in train_random_forest_regressor
+2025-05-21 02:18:59,775 - __main__ - ERROR -     pipeline.fit(X_train, y_train)
+2025-05-21 02:18:59,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+2025-05-21 02:18:59,775 - __main__ - ERROR -     return fit_method(estimator, *args, **kwargs)
+2025-05-21 02:18:59,775 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:18:59,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\pipeline.py", line 662, in fit
+2025-05-21 02:18:59,775 - __main__ - ERROR -     self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+2025-05-21 02:18:59,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+2025-05-21 02:18:59,775 - __main__ - ERROR -     return fit_method(estimator, *args, **kwargs)
+2025-05-21 02:18:59,775 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:18:59,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 422, in fit
+2025-05-21 02:18:59,775 - __main__ - ERROR -     y = np.ascontiguousarray(y, dtype=DOUBLE)
+2025-05-21 02:18:59,775 - __main__ - ERROR -         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:18:59,775 - __main__ - ERROR - ValueError: could not convert string to float: 'Yes'
+2025-05-21 02:18:59,775 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv failed with return code 1
+2025-05-21 02:18:59,775 - __main__ - ERROR - Some models failed to train
+2025-05-21 02:18:59,775 - __main__ - INFO - All models training completed at 2025-05-21 02:18:59.775813
+2025-05-21 02:18:59,775 - __main__ - INFO - ==================================================
+2025-05-21 02:20:41,813 - __main__ - INFO - ==================================================
+2025-05-21 02:20:41,813 - __main__ - INFO - Starting all models training at 2025-05-21 02:20:41.813408
+2025-05-21 02:20:41,823 - __main__ - INFO - ==================================================
+2025-05-21 02:20:41,823 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:20:41,823 - __main__ - INFO - ==================================================
+2025-05-21 02:20:41,823 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:20:50,855 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:20:50,855 - __main__ - ERROR - INFO:__main__:Starting individual career path models training at 2025-05-21 02:20:44.443200
+2025-05-21 02:20:50,855 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading career path data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:20:50,855 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:20:50,855 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Prepared career path data: 3981 training samples, 900 testing samples
+2025-05-21 02:20:50,855 - __main__ - ERROR - INFO:__main__:Training data shape: (3981, 15)
+2025-05-21 02:20:50,855 - __main__ - ERROR - INFO:__main__:Testing data shape: (900, 15)
+2025-05-21 02:20:50,855 - __main__ - ERROR - INFO:__main__:Training Random Forest model for Career Path Prediction...
+2025-05-21 02:20:50,855 - __main__ - ERROR - INFO:__main__:Random Forest Career Path Prediction Metrics:
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  Accuracy: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  Precision: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  Recall: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  F1 Score: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved RandomForest model results for CareerPathPrediction to MongoDB with ID: 682cc7fd71f884b94cbbd1b5
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:Training XGBoost model for Career Path Prediction...
+2025-05-21 02:20:50,865 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\xgboost\training.py:183: UserWarning: [02:20:46] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\learner.cc:738: 
+2025-05-21 02:20:50,865 - __main__ - ERROR - Parameters: { "use_label_encoder" } are not used.
+2025-05-21 02:20:50,865 - __main__ - ERROR - 
+2025-05-21 02:20:50,865 - __main__ - ERROR -   bst.update(dtrain, iteration=i, fobj=obj)
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:XGBoost Career Path Prediction Metrics:
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  Accuracy: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  Precision: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  Recall: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  F1 Score: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved XGBoost model results for CareerPathPrediction to MongoDB with ID: 682cc7ff71f884b94cbbd1b7
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:Training Logistic Regression model for Career Path Prediction...
+2025-05-21 02:20:50,865 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\linear_model\_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+2025-05-21 02:20:50,865 - __main__ - ERROR -   warnings.warn(
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:Logistic Regression Career Path Prediction Metrics:
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  Accuracy: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  Precision: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  Recall: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:  F1 Score: 1.0000
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved LogisticRegression model results for CareerPathPrediction to MongoDB with ID: 682cc80171f884b94cbbd1b9
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:Training completed successfully
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:Individual career path models training completed at 2025-05-21 02:20:49.889370
+2025-05-21 02:20:50,865 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:20:50,865 - __main__ - INFO - ==================================================
+2025-05-21 02:20:50,865 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:20:50,865 - __main__ - INFO - ==================================================
+2025-05-21 02:20:50,865 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:Starting individual employment models training at 2025-05-21 02:20:53.731475
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading employment data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Prepared employment data: 7000 training samples, 1500 testing samples
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:Training data shape: (7000, 16)
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:Testing data shape: (1500, 16)
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:Training Random Forest Regressor model for Employment Probability Post-Graduation...
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:Random Forest Regressor Employment Probability Metrics:
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  MSE: 0.1969
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  RMSE: 0.4438
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  MAE: 0.3925
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  R²: 0.1795
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.6747
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  Precision: 0.7822
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  Recall: 0.6344
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.7006
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  ROC AUC: 0.7305
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved RandomForestRegressor model results for EmploymentProbability to MongoDB with ID: 682cc80721a7e3c917f96cbe
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:Training XGBoost Regressor model for Employment Probability Post-Graduation...
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:XGBoost Regressor Employment Probability Metrics:
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  MSE: 0.2286
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  RMSE: 0.4781
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  MAE: 0.3894
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  R²: 0.0474
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.6440
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  Precision: 0.7163
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  Recall: 0.6733
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.6942
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  ROC AUC: 0.7052
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved XGBoostRegressor model results for EmploymentProbability to MongoDB with ID: 682cc80821a7e3c917f96cc0
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:Training Linear Regression model for Employment Probability Post-Graduation...
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:Linear Regression Employment Probability Metrics:
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  MSE: 0.2151
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  RMSE: 0.4638
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  MAE: 0.4249
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  R²: 0.1039
+2025-05-21 02:20:58,822 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.6487
+2025-05-21 02:20:58,831 - __main__ - ERROR - INFO:__main__:  Precision: 0.7131
+2025-05-21 02:20:58,831 - __main__ - ERROR - INFO:__main__:  Recall: 0.6933
+2025-05-21 02:20:58,831 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.7031
+2025-05-21 02:20:58,831 - __main__ - ERROR - INFO:__main__:  ROC AUC: 0.6950
+2025-05-21 02:20:58,831 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:20:58,831 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved LinearRegression model results for EmploymentProbability to MongoDB with ID: 682cc80921a7e3c917f96cc2
+2025-05-21 02:20:58,831 - __main__ - ERROR - INFO:__main__:Training completed successfully
+2025-05-21 02:20:58,831 - __main__ - ERROR - INFO:__main__:Individual employment models training completed at 2025-05-21 02:20:57.932470
+2025-05-21 02:20:58,831 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:20:58,831 - __main__ - INFO - All models trained successfully
+2025-05-21 02:20:58,832 - __main__ - INFO - All models training completed at 2025-05-21 02:20:58.832626
+2025-05-21 02:20:58,832 - __main__ - INFO - ==================================================
+2025-05-21 02:27:19,187 - __main__ - INFO - ==================================================
+2025-05-21 02:27:19,187 - __main__ - INFO - Starting all models training at 2025-05-21 02:27:19.187888
+2025-05-21 02:27:19,199 - __main__ - INFO - ==================================================
+2025-05-21 02:27:19,199 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:27:19,199 - __main__ - INFO - ==================================================
+2025-05-21 02:27:19,199 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:Starting individual career path models training at 2025-05-21 02:27:22.859966
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading career path data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Prepared career path data: 3981 training samples, 900 testing samples
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:Training data shape: (3981, 14)
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:Testing data shape: (900, 14)
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:Training Random Forest model for Career Path Prediction...
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:Random Forest Career Path Prediction Metrics:
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.7522
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:  Precision: 0.7686
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:  Recall: 0.7522
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.7514
+2025-05-21 02:27:30,886 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:27:30,896 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved RandomForest model results for CareerPathPrediction to MongoDB with ID: 682cc98cf1982cca8418382b
+2025-05-21 02:27:30,896 - __main__ - ERROR - INFO:__main__:Training XGBoost model for Career Path Prediction...
+2025-05-21 02:27:30,896 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\xgboost\training.py:183: UserWarning: [02:27:25] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\learner.cc:738: 
+2025-05-21 02:27:30,897 - __main__ - ERROR - Parameters: { "use_label_encoder" } are not used.
+2025-05-21 02:27:30,897 - __main__ - ERROR - 
+2025-05-21 02:27:30,898 - __main__ - ERROR -   bst.update(dtrain, iteration=i, fobj=obj)
+2025-05-21 02:27:30,898 - __main__ - ERROR - INFO:__main__:XGBoost Career Path Prediction Metrics:
+2025-05-21 02:27:30,899 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.7533
+2025-05-21 02:27:30,899 - __main__ - ERROR - INFO:__main__:  Precision: 0.7559
+2025-05-21 02:27:30,899 - __main__ - ERROR - INFO:__main__:  Recall: 0.7533
+2025-05-21 02:27:30,900 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.7533
+2025-05-21 02:27:30,900 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:27:30,902 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved XGBoost model results for CareerPathPrediction to MongoDB with ID: 682cc98ff1982cca8418382d
+2025-05-21 02:27:30,902 - __main__ - ERROR - INFO:__main__:Training Logistic Regression model for Career Path Prediction...
+2025-05-21 02:27:30,903 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\linear_model\_logistic.py:1247: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+2025-05-21 02:27:30,903 - __main__ - ERROR -   warnings.warn(
+2025-05-21 02:27:30,904 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+2025-05-21 02:27:30,904 - __main__ - ERROR -   _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+2025-05-21 02:27:30,905 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+2025-05-21 02:27:30,905 - __main__ - ERROR -   _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+2025-05-21 02:27:30,906 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+2025-05-21 02:27:30,907 - __main__ - ERROR -   _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+2025-05-21 02:27:30,907 - __main__ - ERROR - C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+2025-05-21 02:27:30,907 - __main__ - ERROR -   _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+2025-05-21 02:27:30,907 - __main__ - ERROR - INFO:__main__:Logistic Regression Career Path Prediction Metrics:
+2025-05-21 02:27:30,907 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.7511
+2025-05-21 02:27:30,911 - __main__ - ERROR - INFO:__main__:  Precision: 0.7376
+2025-05-21 02:27:30,912 - __main__ - ERROR - INFO:__main__:  Recall: 0.7511
+2025-05-21 02:27:30,912 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.7289
+2025-05-21 02:27:30,912 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:27:30,913 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved LogisticRegression model results for CareerPathPrediction to MongoDB with ID: 682cc991f1982cca8418382f
+2025-05-21 02:27:30,913 - __main__ - ERROR - INFO:__main__:Training completed successfully
+2025-05-21 02:27:30,914 - __main__ - ERROR - INFO:__main__:Individual career path models training completed at 2025-05-21 02:27:30.103973
+2025-05-21 02:27:30,915 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:27:30,916 - __main__ - INFO - ==================================================
+2025-05-21 02:27:30,916 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:27:30,917 - __main__ - INFO - ==================================================
+2025-05-21 02:27:30,918 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:27:38,919 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:27:38,919 - __main__ - ERROR - INFO:__main__:Starting individual employment models training at 2025-05-21 02:27:33.746839
+2025-05-21 02:27:38,919 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading employment data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:27:38,920 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:27:38,920 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Prepared employment data: 7000 training samples, 1500 testing samples
+2025-05-21 02:27:38,920 - __main__ - ERROR - INFO:__main__:Training data shape: (7000, 16)
+2025-05-21 02:27:38,920 - __main__ - ERROR - INFO:__main__:Testing data shape: (1500, 16)
+2025-05-21 02:27:38,920 - __main__ - ERROR - INFO:__main__:Training Random Forest Regressor model for Employment Probability Post-Graduation...
+2025-05-21 02:27:38,920 - __main__ - ERROR - INFO:__main__:Random Forest Regressor Employment Probability Metrics:
+2025-05-21 02:27:38,921 - __main__ - ERROR - INFO:__main__:  MSE: 0.1969
+2025-05-21 02:27:38,921 - __main__ - ERROR - INFO:__main__:  RMSE: 0.4438
+2025-05-21 02:27:38,921 - __main__ - ERROR - INFO:__main__:  MAE: 0.3925
+2025-05-21 02:27:38,921 - __main__ - ERROR - INFO:__main__:  R²: 0.1795
+2025-05-21 02:27:38,921 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.6747
+2025-05-21 02:27:38,921 - __main__ - ERROR - INFO:__main__:  Precision: 0.7822
+2025-05-21 02:27:38,921 - __main__ - ERROR - INFO:__main__:  Recall: 0.6344
+2025-05-21 02:27:38,922 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.7006
+2025-05-21 02:27:38,922 - __main__ - ERROR - INFO:__main__:  ROC AUC: 0.7305
+2025-05-21 02:27:38,922 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:27:38,922 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved RandomForestRegressor model results for EmploymentProbability to MongoDB with ID: 682cc9975a6066e1a4b9278b
+2025-05-21 02:27:38,922 - __main__ - ERROR - INFO:__main__:Training XGBoost Regressor model for Employment Probability Post-Graduation...
+2025-05-21 02:27:38,922 - __main__ - ERROR - INFO:__main__:XGBoost Regressor Employment Probability Metrics:
+2025-05-21 02:27:38,923 - __main__ - ERROR - INFO:__main__:  MSE: 0.2286
+2025-05-21 02:27:38,923 - __main__ - ERROR - INFO:__main__:  RMSE: 0.4781
+2025-05-21 02:27:38,923 - __main__ - ERROR - INFO:__main__:  MAE: 0.3894
+2025-05-21 02:27:38,923 - __main__ - ERROR - INFO:__main__:  R²: 0.0474
+2025-05-21 02:27:38,923 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.6440
+2025-05-21 02:27:38,923 - __main__ - ERROR - INFO:__main__:  Precision: 0.7163
+2025-05-21 02:27:38,923 - __main__ - ERROR - INFO:__main__:  Recall: 0.6733
+2025-05-21 02:27:38,923 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.6942
+2025-05-21 02:27:38,924 - __main__ - ERROR - INFO:__main__:  ROC AUC: 0.7052
+2025-05-21 02:27:38,924 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:27:38,924 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved XGBoostRegressor model results for EmploymentProbability to MongoDB with ID: 682cc9985a6066e1a4b9278d
+2025-05-21 02:27:38,924 - __main__ - ERROR - INFO:__main__:Training Linear Regression model for Employment Probability Post-Graduation...
+2025-05-21 02:27:38,924 - __main__ - ERROR - INFO:__main__:Linear Regression Employment Probability Metrics:
+2025-05-21 02:27:38,925 - __main__ - ERROR - INFO:__main__:  MSE: 0.2151
+2025-05-21 02:27:38,925 - __main__ - ERROR - INFO:__main__:  RMSE: 0.4638
+2025-05-21 02:27:38,925 - __main__ - ERROR - INFO:__main__:  MAE: 0.4249
+2025-05-21 02:27:38,925 - __main__ - ERROR - INFO:__main__:  R²: 0.1039
+2025-05-21 02:27:38,926 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.6487
+2025-05-21 02:27:38,926 - __main__ - ERROR - INFO:__main__:  Precision: 0.7131
+2025-05-21 02:27:38,926 - __main__ - ERROR - INFO:__main__:  Recall: 0.6933
+2025-05-21 02:27:38,927 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.7031
+2025-05-21 02:27:38,927 - __main__ - ERROR - INFO:__main__:  ROC AUC: 0.6950
+2025-05-21 02:27:38,927 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:27:38,927 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved LinearRegression model results for EmploymentProbability to MongoDB with ID: 682cc9995a6066e1a4b9278f
+2025-05-21 02:27:38,927 - __main__ - ERROR - INFO:__main__:Training completed successfully
+2025-05-21 02:27:38,928 - __main__ - ERROR - INFO:__main__:Individual employment models training completed at 2025-05-21 02:27:37.956977
+2025-05-21 02:27:38,928 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:27:38,928 - __main__ - INFO - All models trained successfully
+2025-05-21 02:27:38,929 - __main__ - INFO - All models training completed at 2025-05-21 02:27:38.928972
+2025-05-21 02:27:38,929 - __main__ - INFO - ==================================================
+2025-05-21 02:33:11,995 - __main__ - INFO - ==================================================
+2025-05-21 02:33:11,995 - __main__ - INFO - Starting all models training at 2025-05-21 02:33:11.995756
+2025-05-21 02:33:12,007 - __main__ - INFO - ==================================================
+2025-05-21 02:33:12,007 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:33:12,007 - __main__ - INFO - ==================================================
+2025-05-21 02:33:12,007 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:33:16,767 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:33:16,767 - __main__ - ERROR - INFO:__main__:Starting individual career path models training at 2025-05-21 02:33:15.573111
+2025-05-21 02:33:16,768 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading career path data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:33:16,768 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:33:16,768 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Prepared career path data: 3981 training samples, 900 testing samples
+2025-05-21 02:33:16,768 - __main__ - ERROR - INFO:__main__:Training data shape: (3981, 74)
+2025-05-21 02:33:16,768 - __main__ - ERROR - INFO:__main__:Testing data shape: (900, 74)
+2025-05-21 02:33:16,768 - __main__ - ERROR - INFO:__main__:Training Random Forest model for Career Path Prediction...
+2025-05-21 02:33:16,769 - __main__ - ERROR - Traceback (most recent call last):
+2025-05-21 02:33:16,769 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 675, in <module>
+2025-05-21 02:33:16,769 - __main__ - ERROR -     main()
+2025-05-21 02:33:16,769 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 577, in main
+2025-05-21 02:33:16,769 - __main__ - ERROR -     model, metrics, parameters, feature_importances = train_random_forest(
+2025-05-21 02:33:16,769 - __main__ - ERROR -                                                       ^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,769 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py", line 92, in train_random_forest
+2025-05-21 02:33:16,770 - __main__ - ERROR -     pipeline.fit(X_train, y_train)
+2025-05-21 02:33:16,770 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+2025-05-21 02:33:16,770 - __main__ - ERROR -     return fit_method(estimator, *args, **kwargs)
+2025-05-21 02:33:16,770 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,770 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\pipeline.py", line 654, in fit
+2025-05-21 02:33:16,770 - __main__ - ERROR -     Xt = self._fit(X, y, routed_params, raw_params=params)
+2025-05-21 02:33:16,770 - __main__ - ERROR -          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,771 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\pipeline.py", line 588, in _fit
+2025-05-21 02:33:16,771 - __main__ - ERROR -     X, fitted_transformer = fit_transform_one_cached(
+2025-05-21 02:33:16,771 - __main__ - ERROR -                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,771 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\joblib\memory.py", line 326, in __call__
+2025-05-21 02:33:16,771 - __main__ - ERROR -     return self.func(*args, **kwargs)
+2025-05-21 02:33:16,771 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,771 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\pipeline.py", line 1551, in _fit_transform_one
+2025-05-21 02:33:16,772 - __main__ - ERROR -     res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+2025-05-21 02:33:16,772 - __main__ - ERROR -           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,772 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+2025-05-21 02:33:16,772 - __main__ - ERROR -     data_to_wrap = f(self, X, *args, **kwargs)
+2025-05-21 02:33:16,772 - __main__ - ERROR -                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,772 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+2025-05-21 02:33:16,772 - __main__ - ERROR -     return fit_method(estimator, *args, **kwargs)
+2025-05-21 02:33:16,772 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,773 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 1001, in fit_transform
+2025-05-21 02:33:16,773 - __main__ - ERROR -     result = self._call_func_on_transformers(
+2025-05-21 02:33:16,773 - __main__ - ERROR -              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,773 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\compose\_column_transformer.py", line 910, in _call_func_on_transformers
+2025-05-21 02:33:16,773 - __main__ - ERROR -     return Parallel(n_jobs=self.n_jobs)(jobs)
+2025-05-21 02:33:16,773 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,773 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\utils\parallel.py", line 77, in __call__
+2025-05-21 02:33:16,773 - __main__ - ERROR -     return super().__call__(iterable_with_config)
+2025-05-21 02:33:16,774 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,774 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\joblib\parallel.py", line 1985, in __call__
+2025-05-21 02:33:16,774 - __main__ - ERROR -     return output if self.return_generator else list(output)
+2025-05-21 02:33:16,774 - __main__ - ERROR -                                                 ^^^^^^^^^^^^
+2025-05-21 02:33:16,774 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\joblib\parallel.py", line 1913, in _get_sequential_output
+2025-05-21 02:33:16,774 - __main__ - ERROR -     res = func(*args, **kwargs)
+2025-05-21 02:33:16,774 - __main__ - ERROR -           ^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\utils\parallel.py", line 139, in __call__
+2025-05-21 02:33:16,775 - __main__ - ERROR -     return self.function(*args, **kwargs)
+2025-05-21 02:33:16,775 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\pipeline.py", line 1551, in _fit_transform_one
+2025-05-21 02:33:16,775 - __main__ - ERROR -     res = transformer.fit_transform(X, y, **params.get("fit_transform", {}))
+2025-05-21 02:33:16,775 - __main__ - ERROR -           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,775 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+2025-05-21 02:33:16,776 - __main__ - ERROR -     data_to_wrap = f(self, X, *args, **kwargs)
+2025-05-21 02:33:16,776 - __main__ - ERROR -                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,776 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\base.py", line 921, in fit_transform
+2025-05-21 02:33:16,776 - __main__ - ERROR -     return self.fit(X, y, **fit_params).transform(X)
+2025-05-21 02:33:16,776 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,776 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 894, in fit
+2025-05-21 02:33:16,776 - __main__ - ERROR -     return self.partial_fit(X, y, sample_weight)
+2025-05-21 02:33:16,776 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,776 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\base.py", line 1389, in wrapper
+2025-05-21 02:33:16,776 - __main__ - ERROR -     return fit_method(estimator, *args, **kwargs)
+2025-05-21 02:33:16,777 - __main__ - ERROR -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,777 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 930, in partial_fit
+2025-05-21 02:33:16,777 - __main__ - ERROR -     X = validate_data(
+2025-05-21 02:33:16,777 - __main__ - ERROR -         ^^^^^^^^^^^^^^
+2025-05-21 02:33:16,777 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\utils\validation.py", line 2944, in validate_data
+2025-05-21 02:33:16,777 - __main__ - ERROR -     out = check_array(X, input_name="X", **check_params)
+2025-05-21 02:33:16,777 - __main__ - ERROR -           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,777 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\utils\validation.py", line 1055, in check_array
+2025-05-21 02:33:16,777 - __main__ - ERROR -     array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+2025-05-21 02:33:16,777 - __main__ - ERROR -             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,778 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\sklearn\utils\_array_api.py", line 839, in _asarray_with_order
+2025-05-21 02:33:16,778 - __main__ - ERROR -     array = numpy.asarray(array, order=order, dtype=dtype)
+2025-05-21 02:33:16,778 - __main__ - ERROR -             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,778 - __main__ - ERROR -   File "C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\venv\Lib\site-packages\pandas\core\generic.py", line 2153, in __array__
+2025-05-21 02:33:16,778 - __main__ - ERROR -     arr = np.asarray(values, dtype=dtype)
+2025-05-21 02:33:16,778 - __main__ - ERROR -           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-05-21 02:33:16,778 - __main__ - ERROR - ValueError: could not convert string to float: 'Tanauan'
+2025-05-21 02:33:16,778 - __main__ - ERROR - Script python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv failed with return code 1
+2025-05-21 02:33:16,778 - __main__ - INFO - ==================================================
+2025-05-21 02:33:16,778 - __main__ - INFO - Training employment probability prediction models
+2025-05-21 02:33:16,778 - __main__ - INFO - ==================================================
+2025-05-21 02:33:16,778 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_employment_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:Starting individual employment models training at 2025-05-21 02:33:19.266280
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading employment data from ..\alumni-dataset\bsu_career_train.csv
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Loading validation data from ..\alumni-dataset\bsu_career_test.csv
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:models.prediction.enhanced_data_loader:Prepared employment data: 7000 training samples, 1500 testing samples
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:Training data shape: (7000, 16)
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:Testing data shape: (1500, 16)
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:Training Random Forest Regressor model for Employment Probability Post-Graduation...
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:Random Forest Regressor Employment Probability Metrics:
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  MSE: 0.1969
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  RMSE: 0.4438
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  MAE: 0.3925
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  R²: 0.1795
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.6747
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  Precision: 0.7822
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  Recall: 0.6344
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.7006
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  ROC AUC: 0.7305
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved RandomForestRegressor model results for EmploymentProbability to MongoDB with ID: 682ccaf1a0b1c5ce2a4f6af9
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:Training XGBoost Regressor model for Employment Probability Post-Graduation...
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:XGBoost Regressor Employment Probability Metrics:
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  MSE: 0.2286
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  RMSE: 0.4781
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  MAE: 0.3894
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  R²: 0.0474
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.6440
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  Precision: 0.7163
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  Recall: 0.6733
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.6942
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  ROC AUC: 0.7052
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved XGBoostRegressor model results for EmploymentProbability to MongoDB with ID: 682ccaf2a0b1c5ce2a4f6afb
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:Training Linear Regression model for Employment Probability Post-Graduation...
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:Linear Regression Employment Probability Metrics:
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  MSE: 0.2151
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  RMSE: 0.4638
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  MAE: 0.4249
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  R²: 0.1039
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  Accuracy: 0.6487
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  Precision: 0.7131
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  Recall: 0.6933
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  F1 Score: 0.7031
+2025-05-21 02:33:24,350 - __main__ - ERROR - INFO:__main__:  ROC AUC: 0.6950
+2025-05-21 02:33:24,359 - __main__ - ERROR - INFO:models.prediction.model_results_db:Connected to MongoDB: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement, Database: alumni_management
+2025-05-21 02:33:24,359 - __main__ - ERROR - INFO:models.prediction.model_results_db:Saved LinearRegression model results for EmploymentProbability to MongoDB with ID: 682ccaf3a0b1c5ce2a4f6afd
+2025-05-21 02:33:24,359 - __main__ - ERROR - INFO:__main__:Training completed successfully
+2025-05-21 02:33:24,359 - __main__ - ERROR - INFO:__main__:Individual employment models training completed at 2025-05-21 02:33:23.465530
+2025-05-21 02:33:24,359 - __main__ - ERROR - INFO:__main__:==================================================
+2025-05-21 02:33:24,359 - __main__ - ERROR - Some models failed to train
+2025-05-21 02:33:24,359 - __main__ - INFO - All models training completed at 2025-05-21 02:33:24.359023
+2025-05-21 02:33:24,360 - __main__ - INFO - ==================================================
+2025-05-21 02:34:40,768 - __main__ - INFO - ==================================================
+2025-05-21 02:34:40,768 - __main__ - INFO - Starting all models training at 2025-05-21 02:34:40.768320
+2025-05-21 02:34:40,785 - __main__ - INFO - ==================================================
+2025-05-21 02:34:40,786 - __main__ - INFO - Training career path prediction models
+2025-05-21 02:34:40,786 - __main__ - INFO - ==================================================
+2025-05-21 02:34:40,786 - __main__ - INFO - Running command: python C:\Users\mhrkp\OneDrive\Desktop\AlumniManagementSystem\server\src\scripts\train_individual_career_path_models.py --train ..\alumni-dataset\bsu_career_train.csv --test ..\alumni-dataset\bsu_career_test.csv

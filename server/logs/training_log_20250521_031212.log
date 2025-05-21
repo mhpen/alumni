@@ -1,0 +1,85 @@
+2025-05-21 03:12:12,060 - src.models.prediction.model_logger - INFO - ModelLogger initialized with log directory: logs
+2025-05-21 03:12:12,141 - src.models.prediction.model_logger - INFO - Logging preprocessing information...
+2025-05-21 03:12:12,141 - src.models.prediction.model_logger - INFO - Training data shape: (7000, 8)
+2025-05-21 03:12:12,141 - src.models.prediction.model_logger - INFO - Test data shape: (1500, 8)
+2025-05-21 03:12:12,142 - src.models.prediction.model_logger - INFO - Validation data shape: (1500, 8)
+2025-05-21 03:12:12,142 - src.models.prediction.model_logger - INFO - Class distribution: {'Agronomy Specialist': np.int64(225), 'Animal Science Specialist': np.int64(206), 'Automotive Technology Specialist': np.int64(142), 'Biology Specialist': np.int64(94), 'Communication Specialist': np.int64(108), 'Computer Science Specialist': np.int64(98), 'Criminology Specialist': np.int64(469), 'Electrical Technology Specialist': np.int64(125), 'Electronics Technology Specialist': np.int64(157), 'English Specialist': np.int64(202), 'Filipino Specialist': np.int64(103), 'General Education Specialist': np.int64(459), 'Information Technology Specialist': np.int64(81), 'Mathematics Specialist': np.int64(186), 'Nursing Specialist': np.int64(472), 'Physics Specialist': np.int64(73), 'Political Science Specialist': np.int64(129), 'Public Administration Specialist': np.int64(450), 'Science Specialist': np.int64(94), 'Social Studies Specialist': np.int64(108), 'Unemployed': np.int64(3019)}
+2025-05-21 03:12:12,143 - src.models.prediction.model_logger - INFO - Class names saved to logs\reports\class_names.json
+2025-05-21 03:12:12,661 - src.models.prediction.model_logger - INFO - Logging training information for random_forest...
+2025-05-21 03:12:12,662 - src.models.prediction.model_logger - INFO - Model parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+2025-05-21 03:12:12,662 - src.models.prediction.model_logger - INFO - Training time: 0.52 seconds
+2025-05-21 03:12:12,663 - src.models.prediction.model_logger - INFO - Model parameters saved to logs\reports\random_forest_params.json
+2025-05-21 03:12:12,710 - src.models.prediction.model_logger - INFO - Logging evaluation results for random_forest...
+2025-05-21 03:12:12,716 - src.models.prediction.model_logger - INFO - Classification report for random_forest:
+2025-05-21 03:12:12,716 - src.models.prediction.model_logger - INFO - Accuracy: 0.6273
+2025-05-21 03:12:12,716 - src.models.prediction.model_logger - INFO - Macro avg precision: 0.6720
+2025-05-21 03:12:12,716 - src.models.prediction.model_logger - INFO - Macro avg recall: 0.6731
+2025-05-21 03:12:12,716 - src.models.prediction.model_logger - INFO - Macro avg F1-score: 0.6661
+2025-05-21 03:12:12,719 - src.models.prediction.model_logger - INFO - Classification report saved to logs\reports\random_forest_report.json
+2025-05-21 03:12:13,511 - src.models.prediction.model_logger - INFO - Confusion matrix plot saved to logs\plots\random_forest_confusion_matrix.png
+2025-05-21 03:12:13,546 - src.models.prediction.model_logger - INFO - Logging feature importance for random_forest...
+2025-05-21 03:12:13,554 - src.models.prediction.model_logger - INFO - Top 10 features for random_forest:
+2025-05-21 03:12:13,554 - src.models.prediction.model_logger - INFO - num__gpa: 0.3469
+2025-05-21 03:12:13,555 - src.models.prediction.model_logger - INFO - num__graduation_year: 0.1122
+2025-05-21 03:12:13,555 - src.models.prediction.model_logger - INFO - cat__internship_experience_Yes: 0.0337
+2025-05-21 03:12:13,555 - src.models.prediction.model_logger - INFO - cat__internship_experience_No: 0.0295
+2025-05-21 03:12:13,556 - src.models.prediction.model_logger - INFO - cat__major_Criminology: 0.0256
+2025-05-21 03:12:13,556 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Science in Nursing: 0.0228
+2025-05-21 03:12:13,556 - src.models.prediction.model_logger - INFO - cat__major_Nursing: 0.0201
+2025-05-21 03:12:13,557 - src.models.prediction.model_logger - INFO - cat__major_Public Administration: 0.0178
+2025-05-21 03:12:13,557 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Public Administration: 0.0178
+2025-05-21 03:12:13,557 - src.models.prediction.model_logger - INFO - cat__major_General Education: 0.0156
+2025-05-21 03:12:13,560 - src.models.prediction.model_logger - INFO - Feature importance saved to logs\reports\random_forest_feature_importance.csv
+2025-05-21 03:12:14,198 - src.models.prediction.model_logger - INFO - Feature importance plot saved to logs\plots\random_forest_feature_importance.png
+2025-05-21 03:12:15,420 - src.models.prediction.model_logger - INFO - Logging training information for xgboost...
+2025-05-21 03:12:15,420 - src.models.prediction.model_logger - INFO - Model parameters: {'objective': 'multi:softprob', 'base_score': None, 'booster': None, 'callbacks': None, 'colsample_bylevel': None, 'colsample_bynode': None, 'colsample_bytree': 0.8, 'device': None, 'early_stopping_rounds': None, 'enable_categorical': False, 'eval_metric': None, 'feature_types': None, 'gamma': None, 'grow_policy': None, 'importance_type': None, 'interaction_constraints': None, 'learning_rate': 0.1, 'max_bin': None, 'max_cat_threshold': None, 'max_cat_to_onehot': None, 'max_delta_step': None, 'max_depth': 6, 'max_leaves': None, 'min_child_weight': None, 'missing': nan, 'monotone_constraints': None, 'multi_strategy': None, 'n_estimators': 100, 'n_jobs': -1, 'num_parallel_tree': None, 'random_state': 42, 'reg_alpha': None, 'reg_lambda': None, 'sampling_method': None, 'scale_pos_weight': None, 'subsample': 0.8, 'tree_method': None, 'validate_parameters': None, 'verbosity': None}
+2025-05-21 03:12:15,420 - src.models.prediction.model_logger - INFO - Training time: 1.22 seconds
+2025-05-21 03:12:15,420 - src.models.prediction.model_logger - INFO - Model parameters saved to logs\reports\xgboost_params.json
+2025-05-21 03:12:15,442 - src.models.prediction.model_logger - INFO - Logging evaluation results for xgboost...
+2025-05-21 03:12:15,449 - src.models.prediction.model_logger - INFO - Classification report for xgboost:
+2025-05-21 03:12:15,449 - src.models.prediction.model_logger - INFO - Accuracy: 0.6447
+2025-05-21 03:12:15,449 - src.models.prediction.model_logger - INFO - Macro avg precision: 0.6989
+2025-05-21 03:12:15,449 - src.models.prediction.model_logger - INFO - Macro avg recall: 0.6579
+2025-05-21 03:12:15,449 - src.models.prediction.model_logger - INFO - Macro avg F1-score: 0.6694
+2025-05-21 03:12:15,452 - src.models.prediction.model_logger - INFO - Classification report saved to logs\reports\xgboost_report.json
+2025-05-21 03:12:16,181 - src.models.prediction.model_logger - INFO - Confusion matrix plot saved to logs\plots\xgboost_confusion_matrix.png
+2025-05-21 03:12:16,185 - src.models.prediction.model_logger - INFO - Logging feature importance for xgboost...
+2025-05-21 03:12:16,185 - src.models.prediction.model_logger - INFO - Top 10 features for xgboost:
+2025-05-21 03:12:16,185 - src.models.prediction.model_logger - INFO - cat__major_Criminology: 0.2031
+2025-05-21 03:12:16,185 - src.models.prediction.model_logger - INFO - cat__major_Public Administration: 0.0679
+2025-05-21 03:12:16,185 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Science in Nursing: 0.0553
+2025-05-21 03:12:16,189 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Elementary Education: 0.0548
+2025-05-21 03:12:16,189 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Public Administration: 0.0484
+2025-05-21 03:12:16,189 - src.models.prediction.model_logger - INFO - cat__major_Agronomy: 0.0371
+2025-05-21 03:12:16,189 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Science in Criminology: 0.0338
+2025-05-21 03:12:16,190 - src.models.prediction.model_logger - INFO - cat__major_Animal Science: 0.0285
+2025-05-21 03:12:16,190 - src.models.prediction.model_logger - INFO - cat__major_Mathematics: 0.0277
+2025-05-21 03:12:16,191 - src.models.prediction.model_logger - INFO - cat__major_English: 0.0273
+2025-05-21 03:12:16,194 - src.models.prediction.model_logger - INFO - Feature importance saved to logs\reports\xgboost_feature_importance.csv
+2025-05-21 03:12:16,818 - src.models.prediction.model_logger - INFO - Feature importance plot saved to logs\plots\xgboost_feature_importance.png
+2025-05-21 03:12:20,114 - src.models.prediction.model_logger - INFO - Logging training information for logistic_regression...
+2025-05-21 03:12:20,114 - src.models.prediction.model_logger - INFO - Model parameters: {'C': 1.0, 'class_weight': None, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'multinomial', 'n_jobs': -1, 'penalty': 'l2', 'random_state': 42, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}
+2025-05-21 03:12:20,114 - src.models.prediction.model_logger - INFO - Training time: 3.30 seconds
+2025-05-21 03:12:20,118 - src.models.prediction.model_logger - INFO - Model parameters saved to logs\reports\logistic_regression_params.json
+2025-05-21 03:12:20,125 - src.models.prediction.model_logger - INFO - Logging evaluation results for logistic_regression...
+2025-05-21 03:12:20,132 - src.models.prediction.model_logger - INFO - Classification report for logistic_regression:
+2025-05-21 03:12:20,132 - src.models.prediction.model_logger - INFO - Accuracy: 0.6500
+2025-05-21 03:12:20,132 - src.models.prediction.model_logger - INFO - Macro avg precision: 0.6900
+2025-05-21 03:12:20,132 - src.models.prediction.model_logger - INFO - Macro avg recall: 0.6744
+2025-05-21 03:12:20,133 - src.models.prediction.model_logger - INFO - Macro avg F1-score: 0.6721
+2025-05-21 03:12:20,134 - src.models.prediction.model_logger - INFO - Classification report saved to logs\reports\logistic_regression_report.json
+2025-05-21 03:12:20,878 - src.models.prediction.model_logger - INFO - Confusion matrix plot saved to logs\plots\logistic_regression_confusion_matrix.png
+2025-05-21 03:12:20,880 - src.models.prediction.model_logger - INFO - Logging feature importance for logistic_regression...
+2025-05-21 03:12:20,881 - src.models.prediction.model_logger - INFO - Top 10 features for logistic_regression:
+2025-05-21 03:12:20,881 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Science: 0.7667
+2025-05-21 03:12:20,881 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Arts: 0.6497
+2025-05-21 03:12:20,881 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Industrial Technology: 0.5668
+2025-05-21 03:12:20,881 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Secondary Education: 0.5396
+2025-05-21 03:12:20,881 - src.models.prediction.model_logger - INFO - cat__major_English: 0.4601
+2025-05-21 03:12:20,881 - src.models.prediction.model_logger - INFO - cat__degree_Bachelor of Science in Agriculture: 0.4452
+2025-05-21 03:12:20,881 - src.models.prediction.model_logger - INFO - cat__major_Mathematics: 0.4383
+2025-05-21 03:12:20,884 - src.models.prediction.model_logger - INFO - num__num_skills: 0.4049
+2025-05-21 03:12:20,884 - src.models.prediction.model_logger - INFO - cat__major_Computer Science: 0.3974
+2025-05-21 03:12:20,884 - src.models.prediction.model_logger - INFO - cat__major_Information Technology: 0.3862
+2025-05-21 03:12:20,889 - src.models.prediction.model_logger - INFO - Feature importance saved to logs\reports\logistic_regression_feature_importance.csv
+2025-05-21 03:12:21,408 - src.models.prediction.model_logger - INFO - Feature importance plot saved to logs\plots\logistic_regression_feature_importance.png
