@@ -12,9 +12,6 @@ app = Flask(__name__)
 
 # Configure CORS to allow requests from frontend with proper preflight handling
 cors_origins = [
-    'https://alumni-client.onrender.com',
-    'https://alumni-client-three.vercel.app',
-    'https://alumni-client-git-main-mhpens-projects.vercel.app',
     'http://localhost:3000',  # For local development
     '*'  # Allow all origins for testing
 ]
@@ -85,7 +82,7 @@ def root():
     return jsonify({
         'message': 'Alumni Management System API is running',
         'status': 'online',
-        'frontend_url': 'https://alumni-client-three.vercel.app',
+        'frontend_url': 'http://localhost:3000',
         'cors_enabled': True,
         'allowed_origins': cors_origins
     })
