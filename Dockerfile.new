@@ -1,0 +1,156 @@
+# Use a multi-stage build
+# Stage 1: Build the React frontend
+FROM node:16-alpine AS frontend-build
+
+# Set working directory
+WORKDIR /frontend
+
+# Copy package.json and package-lock.json first for better caching
+COPY client/package.json client/package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the client code
+COPY client/public ./public
+COPY client/src ./src
+COPY client/postcss.config.js ./
+COPY client/tailwind.config.js ./
+
+# Build the React app
+RUN npm run build
+
+# Stage 2: Build the final image with Python backend
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy Python requirements and install dependencies
+COPY server/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy server code
+COPY server/src ./src
+COPY server/data ./data
+COPY server/models ./models
+COPY server/logs ./logs
+
+# Create necessary directories
+RUN mkdir -p /app/routes && \
+    cp -r /app/src/routes/* /app/routes/ && \
+    mkdir -p /app/models && \
+    cp -r /app/src/models/* /app/models/ && \
+    cp /app/src/db.py /app/db.py && \
+    mkdir -p /app/utils
+
+# Copy built React app from the frontend-build stage
+COPY --from=frontend-build /frontend/build /app/client/build
+
+# Create .env file with environment variables
+RUN echo "MONGODB_URI=mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement\n\
+DATABASE_NAME=alumni_management\n\
+JWT_SECRET_KEY=your_super_secret_key_for_jwt_tokens\n\
+" > /app/.env
+
+# Create combined_app.py file
+RUN echo 'import os\n\
+import sys\n\
+from flask import Flask, send_from_directory, jsonify, request\n\
+\n\
+# Add app directory to path\n\
+sys.path.append("/app")\n\
+\n\
+# Import the blueprints\n\
+from routes.admin_routes import admin_bp\n\
+from routes.analytics_routes import analytics_bp\n\
+from routes.prediction_routes import prediction_bp\n\
+\n\
+# Create Flask app\n\
+combined_app = Flask(__name__, static_folder="client/build")\n\
+\n\
+# Configure app\n\
+from flask_cors import CORS\n\
+from flask_jwt_extended import JWTManager\n\
+from pymongo import MongoClient\n\
+from dotenv import load_dotenv\n\
+\n\
+# Load environment variables\n\
+load_dotenv()\n\
+\n\
+# Configure CORS\n\
+CORS(combined_app)\n\
+\n\
+# Configure JWT\n\
+combined_app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "your_super_secret_key_for_jwt_tokens")\n\
+jwt = JWTManager(combined_app)\n\
+\n\
+# Configure MongoDB\n\
+mongodb_uri = os.getenv("MONGODB_URI", "mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement")\n\
+database_name = os.getenv("DATABASE_NAME", "alumni_management")\n\
+client = MongoClient(mongodb_uri)\n\
+db = client[database_name]\n\
+combined_app.config["DATABASE"] = db\n\
+\n\
+# Register blueprints\n\
+combined_app.register_blueprint(admin_bp)\n\
+combined_app.register_blueprint(analytics_bp)\n\
+combined_app.register_blueprint(prediction_bp)\n\
+\n\
+# API home route\n\
+@combined_app.route("/api")\n\
+def api_home():\n\
+    return jsonify({"message": "Alumni Management System API"})\n\
+\n\
+# Health check endpoint\n\
+@combined_app.route("/api/health")\n\
+def health_check():\n\
+    return jsonify({"status": "healthy"})\n\
+\n\
+# CORS test endpoint\n\
+@combined_app.route("/api/cors-test")\n\
+def cors_test():\n\
+    return jsonify({\n\
+        "message": "CORS is working correctly",\n\
+        "origin": request.headers.get("Origin", "Unknown")\n\
+    })\n\
+\n\
+# Serve React app\n\
+@combined_app.route("/", defaults={"path": ""})\n\
+@combined_app.route("/<path:path>")\n\
+def serve(path):\n\
+    if path.startswith("api/"):\n\
+        # Let API routes handle this\n\
+        pass\n\
+    elif path and os.path.exists(os.path.join(combined_app.static_folder, path)):\n\
+        return send_from_directory(combined_app.static_folder, path)\n\
+    else:\n\
+        # Serve index.html for client-side routing\n\
+        return send_from_directory(combined_app.static_folder, "index.html")\n\
+\n\
+if __name__ == "__main__":\n\
+    port = int(os.environ.get("PORT", 5000))\n\
+    combined_app.run(host="0.0.0.0", port=port)\n\
+' > /app/combined_app.py
+
+# Create startup script
+RUN echo '#!/bin/bash\n\
+echo "Starting Alumni Management System..."\n\
+echo "Checking for client build directory..."\n\
+if [ -d "/app/client/build" ]; then\n\
+  echo "Client build directory found."\n\
+else\n\
+  echo "Client build directory not found. Creating empty directory..."\n\
+  mkdir -p /app/client/build\n\
+  echo "<html><body><h1>Alumni Management System</h1><p>Frontend not built correctly.</p></body></html>" > /app/client/build/index.html\n\
+fi\n\
+\n\
+echo "Starting combined application..."\n\
+cd /app && python combined_app.py\n\
+' > /app/start.sh && chmod +x /app/start.sh
+
+# Expose port
+EXPOSE 5000
+
+# Run the application
+CMD ["/app/start.sh"]
