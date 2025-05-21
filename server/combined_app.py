@@ -4,11 +4,24 @@ from flask import Flask, send_from_directory, jsonify, request
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from werkzeug.serving import run_simple
 
+# Add current directory to path to ensure imports work in Docker
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+if current_dir not in sys.path:
+    sys.path.append(current_dir)
+if parent_dir not in sys.path:
+    sys.path.append(parent_dir)
+
 # Import the blueprints directly instead of the app
-sys.path.append('/app')
-from src.routes.admin_routes import admin_bp
-from src.routes.analytics_routes import analytics_bp
-from src.routes.prediction_routes import prediction_bp
+try:
+    from src.routes.admin_routes import admin_bp
+    from src.routes.analytics_routes import analytics_bp
+    from src.routes.prediction_routes import prediction_bp
+except ImportError:
+    # Try alternative import paths for Docker environment
+    from routes.admin_routes import admin_bp
+    from routes.analytics_routes import analytics_bp
+    from routes.prediction_routes import prediction_bp
 
 # Create a new Flask app to serve both the API and the React frontend
 combined_app = Flask(__name__, static_folder='../client/build')

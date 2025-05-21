@@ -14,26 +14,77 @@ A comprehensive system for managing alumni data, tracking career paths, and pred
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Docker and Docker Compose (for containerized deployment)
 - MongoDB Atlas account (or local MongoDB instance)
 - Modern web browser (Chrome, Firefox, Edge)
+- Git (for version control)
 
-### Installation
+### Local Development
 
-1. Clone the repository or download the source code
-2. Ensure you have Python installed
-3. Run the start script:
+1. Clone the repository:
+   ```
+   git clone https://github.com/ynodev/alumni.git
+   cd alumni
+   ```
 
-```
-start_alumni_system.bat
-```
+2. Set up environment variables:
+   - Copy `.env.example` to `.env`
+   - Update the values as needed
 
-This will:
-- Set up a Python virtual environment
-- Install all required dependencies
-- Initialize the database with sample data
-- Start the server
-- Open the client in your default browser
+3. Run the application using Docker Compose:
+   ```
+   docker-compose up --build
+   ```
+
+4. Access the application at http://localhost:5000
+
+### Production Deployment
+
+#### Using Docker
+
+1. Build the Docker image:
+   ```
+   docker build -t alumni-management-system .
+   ```
+
+2. Run the container:
+   ```
+   docker run -p 5000:5000 --env-file .env alumni-management-system
+   ```
+
+#### Using Blueprint
+
+1. Deploy using the blueprint.yaml configuration:
+   ```
+   # Using your preferred container platform
+   # Example for Kubernetes:
+   kubectl apply -f blueprint.yaml
+   ```
+
+#### Manual Deployment
+
+If you prefer to run the application without Docker:
+
+1. Install Python 3.8+ and Node.js 18+
+2. Set up the server:
+   ```
+   cd server
+   pip install -r requirements.txt
+   npm install
+   ```
+
+3. Set up the client:
+   ```
+   cd client
+   npm install
+   npm run build
+   ```
+
+4. Start the combined application:
+   ```
+   cd server
+   python combined_app.py
+   ```
 
 ## Usage
 
@@ -63,20 +114,32 @@ The system includes two ML models:
 
 ```
 AlumniManagementSystem/
-├── client/                  # Frontend code
-│   ├── assets/              # CSS, JS, and images
-│   ├── index.html           # Login page
-│   └── dashboard.html       # Admin dashboard
-├── server/                  # Backend code
+├── client/                  # Frontend React application
+│   ├── build/               # Production build
+│   ├── public/              # Public assets
+│   ├── src/                 # React source code
+│   │   ├── components/      # React components
+│   │   ├── pages/           # Page components
+│   │   ├── services/        # API services
+│   │   └── App.js           # Main application component
+│   ├── package.json         # Node.js dependencies
+│   └── tailwind.config.js   # Tailwind CSS configuration
+├── server/                  # Backend Flask application
 │   ├── src/                 # Source code
 │   │   ├── models/          # Data models
 │   │   ├── routes/          # API routes
-│   │   └── app.py           # Flask application
+│   │   └── utils/           # Utility functions
+│   ├── combined_app.py      # Combined Flask application
 │   ├── init_db.py           # Database initialization
 │   ├── run.py               # Server entry point
 │   └── requirements.txt     # Python dependencies
-├── dataset/                 # ML datasets
-├── start_alumni_system.bat  # Startup script
+├── models/                  # ML model files
+├── employment_models/       # Employment prediction models
+├── Dockerfile               # Docker configuration
+├── docker-compose.yml       # Docker Compose configuration
+├── blueprint.yaml           # Blueprint deployment configuration
+├── .env.example             # Example environment variables
+├── start_alumni_system.bat  # Local startup script
 └── README.md                # This file
 ```
 
