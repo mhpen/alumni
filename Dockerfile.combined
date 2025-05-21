@@ -1,25 +1,36 @@
+# Use a multi-stage build
 # Stage 1: Build the React frontend
 FROM node:16-alpine AS frontend-build
 
-WORKDIR /app
-COPY client ./client
-WORKDIR /app/client
+# Set working directory
+WORKDIR /frontend
+
+# Copy package.json and package-lock.json
+COPY client/package*.json ./
+
+# Install dependencies
 RUN npm install
+
+# Copy the rest of the client code
+COPY client/ ./
+
+# Build the React app
 RUN npm run build
 
-# Stage 2: Build the final image with both frontend and backend
+# Stage 2: Build the final image with Python backend
 FROM python:3.9-slim
 
+# Set working directory
 WORKDIR /app
 
-# Copy and install Python requirements
-COPY server/requirements.txt ./
+# Copy Python requirements and install dependencies
+COPY server/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy server code
-COPY server/ ./
+COPY server/ .
 
-# Create symbolic links for the routes directory
+# Create necessary directories and copy files
 RUN mkdir -p /app/routes && \
     cp -r /app/src/routes/* /app/routes/ && \
     mkdir -p /app/models && \
@@ -28,34 +39,32 @@ RUN mkdir -p /app/routes && \
     mkdir -p /app/utils && \
     cp -r /app/src/utils/* /app/utils/
 
-# Copy built frontend from the frontend-build stage
-COPY --from=frontend-build /app/client/build ./client/build
+# Copy built React app from the frontend-build stage
+COPY --from=frontend-build /frontend/build /app/client/build
 
-# Create a .env file with environment variables
+# Create .env file with environment variables
 RUN echo "MONGODB_URI=mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement\n\
 DATABASE_NAME=alumni_management\n\
 JWT_SECRET_KEY=your_super_secret_key_for_jwt_tokens\n\
 " > /app/.env
 
-# Create a data directory for the prediction models
-RUN mkdir -p /app/data
-
-# Create the combined_app.py file
+# Create combined_app.py file
 RUN echo 'import os\n\
 import sys\n\
 from flask import Flask, send_from_directory, jsonify, request\n\
 \n\
-# Import the blueprints directly\n\
-import sys\n\
-sys.path.append('/app')\n\
+# Add app directory to path\n\
+sys.path.append("/app")\n\
+\n\
+# Import the blueprints\n\
 from routes.admin_routes import admin_bp\n\
 from routes.analytics_routes import analytics_bp\n\
 from routes.prediction_routes import prediction_bp\n\
 \n\
-# Create a new Flask app to serve both the API and the React frontend\n\
+# Create Flask app\n\
 combined_app = Flask(__name__, static_folder="client/build")\n\
 \n\
-# Configure MongoDB (copied from app.py)\n\
+# Configure app\n\
 from flask_cors import CORS\n\
 from flask_jwt_extended import JWTManager\n\
 from pymongo import MongoClient\n\
@@ -78,8 +87,7 @@ client = MongoClient(mongodb_uri)\n\
 db = client[database_name]\n\
 combined_app.config["DATABASE"] = db\n\
 \n\
-# Register the blueprints directly with the /api prefix\n\
-# Note: admin_bp, analytics_bp, and prediction_bp already have url_prefix='/api/...' defined\n\
+# Register blueprints\n\
 combined_app.register_blueprint(admin_bp)\n\
 combined_app.register_blueprint(analytics_bp)\n\
 combined_app.register_blueprint(prediction_bp)\n\
@@ -102,28 +110,25 @@ def cors_test():\n\
         "origin": request.headers.get("Origin", "Unknown")\n\
     })\n\
 \n\
-# Serve the React app\n\
+# Serve React app\n\
 @combined_app.route("/", defaults={"path": ""})\n\
 @combined_app.route("/<path:path>")\n\
 def serve(path):\n\
-    # If the path is for an API endpoint, let the API handle it\n\
     if path.startswith("api/"):\n\
-        # This will be handled by the routes above\n\
+        # Let API routes handle this\n\
         pass\n\
-    \n\
-    # Check if the requested file exists in the static folder\n\
-    if path and os.path.exists(os.path.join(combined_app.static_folder, path)):\n\
+    elif path and os.path.exists(os.path.join(combined_app.static_folder, path)):\n\
         return send_from_directory(combined_app.static_folder, path)\n\
-    \n\
-    # Otherwise, serve the index.html file for client-side routing\n\
-    return send_from_directory(combined_app.static_folder, "index.html")\n\
+    else:\n\
+        # Serve index.html for client-side routing\n\
+        return send_from_directory(combined_app.static_folder, "index.html")\n\
 \n\
 if __name__ == "__main__":\n\
     port = int(os.environ.get("PORT", 5000))\n\
     combined_app.run(host="0.0.0.0", port=port)\n\
 ' > /app/combined_app.py
 
-# Add a script to start the combined server
+# Create startup script
 RUN echo '#!/bin/bash\n\
 echo "Starting Alumni Management System..."\n\
 echo "Checking for client build directory..."\n\
@@ -139,8 +144,8 @@ echo "Starting combined application..."\n\
 cd /app && python combined_app.py\n\
 ' > /app/start.sh && chmod +x /app/start.sh
 
-# Expose the port the app runs on
+# Expose port
 EXPOSE 5000
 
-# Command to run the application
+# Run the application
 CMD ["/app/start.sh"]
