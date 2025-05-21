@@ -3,7 +3,7 @@ services:
   - type: web
     name: alumni-combined
     env: docker
-    dockerfilePath: ./Dockerfile.combined
+    dockerfilePath: ./Dockerfile.new
     dockerContext: .
     plan: free
     envVars:
