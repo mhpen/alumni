@@ -5,7 +5,10 @@ WORKDIR /app
 COPY client/package*.json ./client/
 WORKDIR /app/client
 RUN npm install
-COPY client/ ./
+COPY client/src ./src
+COPY client/public ./public
+COPY client/*.js ./
+COPY client/*.json ./
 RUN npm run build
 
 # Stage 2: Build the final image with both frontend and backend
