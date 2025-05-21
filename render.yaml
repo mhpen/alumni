@@ -1,9 +1,14 @@
 services:
   - type: web
     name: alumni-management-system
-    env: docker
+    env: python
     region: ohio
-    dockerfilePath: ./Dockerfile
+    buildCommand: |
+      pip install -r requirements.txt
+      cd client && npm install && npm run build
+      cd ../server && npm install
+      chmod +x ../start.sh
+    startCommand: bash ./start.sh
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
@@ -18,7 +23,3 @@ services:
         value: 5000
       - key: PYTHON_VERSION
         value: 3.8.0
-    disk:
-      name: model-storage
-      mountPath: /opt/models
-      sizeGB: 1
