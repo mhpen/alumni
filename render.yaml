@@ -1,9 +1,9 @@
 services:
-  # Simple service
+  # Combined service (frontend + backend)
   - type: web
-    name: alumni-simple
+    name: alumni-combined
     env: docker
-    dockerfilePath: ./Dockerfile.simple
+    dockerfilePath: ./Dockerfile.new
     dockerContext: .
     plan: free
     envVars:
@@ -15,70 +15,3 @@ services:
         value: your_super_secret_key_for_jwt_tokens
       - key: PORT
         value: 5000
-
-  # Standalone service
-  - type: web
-    name: alumni-standalone
-    env: docker
-    dockerfilePath: ./Dockerfile.standalone
-    dockerContext: .
-    plan: free
-    envVars:
-      - key: MONGODB_URI
-        value: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement
-      - key: DATABASE_NAME
-        value: alumni_management
-      - key: JWT_SECRET_KEY
-        value: your_super_secret_key_for_jwt_tokens
-      - key: PORT
-        value: 5000
-
-  # Prebuilt service
-  - type: web
-    name: alumni-prebuilt
-    env: docker
-    dockerfilePath: ./Dockerfile.prebuilt
-    dockerContext: .
-    plan: free
-    envVars:
-      - key: MONGODB_URI
-        value: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement
-      - key: DATABASE_NAME
-        value: alumni_management
-      - key: JWT_SECRET_KEY
-        value: your_super_secret_key_for_jwt_tokens
-      - key: PORT
-        value: 5000
-
-  # Nginx service
-  - type: web
-    name: alumni-nginx
-    env: docker
-    dockerfilePath: ./Dockerfile.nginx
-    dockerContext: .
-    plan: free
-    envVars:
-      - key: MONGODB_URI
-        value: mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement
-      - key: DATABASE_NAME
-        value: alumni_management
-      - key: JWT_SECRET_KEY
-        value: your_super_secret_key_for_jwt_tokens
-      - key: PORT
-        value: 5000
-
-  # Minimal service
-  - type: web
-    name: alumni-minimal
-    env: docker
-    dockerfilePath: ./Dockerfile.minimal
-    dockerContext: .
-    plan: free
-
-  # Robust service (handles missing files)
-  - type: web
-    name: alumni-robust
-    env: docker
-    dockerfilePath: ./Dockerfile.robust
-    dockerContext: .
-    plan: free
