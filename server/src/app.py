@@ -10,19 +10,18 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# Configure CORS to allow requests from Vercel frontend with proper preflight handling
-# Include both the main Vercel domain and the preview domains
+# Configure CORS to allow requests from frontend with proper preflight handling
+# Get CORS origin from environment variable or use default list
+cors_origin = os.getenv('CORS_ORIGIN')
 cors_origins = [
+    cors_origin if cors_origin else '*',
     'https://alumni-client-three.vercel.app',
-    'https://alumni-client-c09kk4d6h-mhpens-projects.vercel.app',
-    'https://alumni-client-git-main-mhpens-projects.vercel.app',
-    'https://alumni-client-mhpens-projects.vercel.app',
+    'https://alumni-client.onrender.com',
     'http://localhost:3000',  # For local development
-    '*'  # Allow all origins for testing
 ]
 
 # Apply CORS to all routes
-CORS(app, 
+CORS(app,
      resources={r"/*": {
          "origins": cors_origins,
          "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
