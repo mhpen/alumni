@@ -9,7 +9,6 @@ A comprehensive system for managing alumni data, tracking career paths, and pred
 - **Employment Probability**: ML model to predict employment probability post-graduation
 - **Data Visualization**: Interactive charts and graphs for analytics
 - **MongoDB Integration**: Secure storage of alumni data and ML models
-- **Combined Deployment**: Frontend and backend served from a single application
 
 ## Getting Started
 
@@ -35,12 +34,6 @@ This will:
 - Initialize the database with sample data
 - Start the server
 - Open the client in your default browser
-
-### Deployment
-
-This application is configured for deployment on Render.com using the combined deployment approach, which serves both the frontend and backend from a single server.
-
-For detailed deployment instructions, see [README-COMBINED-DEPLOY.md](README-COMBINED-DEPLOY.md).
 
 ## Usage
 
@@ -100,7 +93,6 @@ AlumniManagementSystem/
 - **Database**: MongoDB
 - **ML**: Scikit-learn, XGBoost, Random Forest
 - **Authentication**: JWT
-- **Deployment**: Render.com
 
 ## License
 
