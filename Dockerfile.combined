@@ -3,7 +3,7 @@
 FROM node:16-alpine AS frontend-build
 
 # Set working directory
-WORKDIR /frontend
+WORKDIR /app/client
 
 # Copy package.json and package-lock.json
 COPY client/package*.json ./
@@ -40,7 +40,7 @@ RUN mkdir -p /app/routes && \
     cp -r /app/src/utils/* /app/utils/
 
 # Copy built React app from the frontend-build stage
-COPY --from=frontend-build /frontend/build /app/client/build
+COPY --from=frontend-build /app/client/build /app/client/build
 
 # Create .env file with environment variables
 RUN echo "MONGODB_URI=mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement\n\
