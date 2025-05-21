@@ -18,14 +18,9 @@ services:
       - key: JWT_SECRET_KEY
         value: your_super_secret_key_for_jwt_tokens
       - key: PORT
-        value: 10000
+        value: "10000"
       - key: PYTHON_VERSION
         value: 3.8.0
-      - key: CORS_ORIGIN
-        fromService:
-          name: alumni-client
-          type: static
-          property: url
 
   # Frontend static site
   - type: static
@@ -42,8 +37,4 @@ services:
       - key: NODE_ENV
         value: production
       - key: REACT_APP_API_URL
-        fromService:
-          name: alumni-api
-          type: web
-          property: url
-          envVarKey: REACT_APP_API_URL
+        value: https://alumni-api.onrender.com
