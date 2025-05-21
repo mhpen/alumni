@@ -19,6 +19,15 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy server code
 COPY server/ ./
 
+# Create symbolic links for the routes directory
+RUN mkdir -p /app/routes && \
+    cp -r /app/src/routes/* /app/routes/ && \
+    mkdir -p /app/models && \
+    cp -r /app/src/models/* /app/models/ && \
+    cp /app/src/db.py /app/db.py && \
+    mkdir -p /app/utils && \
+    cp -r /app/src/utils/* /app/utils/
+
 # Copy built frontend from the frontend-build stage
 COPY --from=frontend-build /app/client/build ./client/build
 
@@ -37,9 +46,11 @@ import sys\n\
 from flask import Flask, send_from_directory, jsonify, request\n\
 \n\
 # Import the blueprints directly\n\
-from src.routes.admin_routes import admin_bp\n\
-from src.routes.analytics_routes import analytics_bp\n\
-from src.routes.prediction_routes import prediction_bp\n\
+import sys\n\
+sys.path.append('/app')\n\
+from routes.admin_routes import admin_bp\n\
+from routes.analytics_routes import analytics_bp\n\
+from routes.prediction_routes import prediction_bp\n\
 \n\
 # Create a new Flask app to serve both the API and the React frontend\n\
 combined_app = Flask(__name__, static_folder="client/build")\n\
@@ -68,9 +79,10 @@ db = client[database_name]\n\
 combined_app.config["DATABASE"] = db\n\
 \n\
 # Register the blueprints directly with the /api prefix\n\
-combined_app.register_blueprint(admin_bp, url_prefix="/api")\n\
-combined_app.register_blueprint(analytics_bp, url_prefix="/api")\n\
-combined_app.register_blueprint(prediction_bp, url_prefix="/api")\n\
+# Note: admin_bp, analytics_bp, and prediction_bp already have url_prefix='/api/...' defined\n\
+combined_app.register_blueprint(admin_bp)\n\
+combined_app.register_blueprint(analytics_bp)\n\
+combined_app.register_blueprint(prediction_bp)\n\
 \n\
 # API home route\n\
 @combined_app.route("/api")\n\
