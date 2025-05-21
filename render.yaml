@@ -74,3 +74,11 @@ services:
     dockerfilePath: ./Dockerfile.minimal
     dockerContext: .
     plan: free
+
+  # Robust service (handles missing files)
+  - type: web
+    name: alumni-robust
+    env: docker
+    dockerfilePath: ./Dockerfile.robust
+    dockerContext: .
+    plan: free

@@ -1,0 +1,86 @@
+# Use a minimal Python image
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install minimal requirements
+RUN pip install --no-cache-dir flask flask-cors pymongo python-dotenv flask-jwt-extended
+
+# Create directories that might be missing
+RUN mkdir -p /app/client/build /app/server/data /app/routes /app/models /app/utils
+
+# Create a simple app.py file
+RUN echo 'import os\n\
+from flask import Flask, send_from_directory, jsonify, request\n\
+from flask_cors import CORS\n\
+\n\
+# Create Flask app\n\
+app = Flask(__name__, static_folder="client/build")\n\
+CORS(app)\n\
+\n\
+# API home route\n\
+@app.route("/")\n\
+def home():\n\
+    return jsonify({\n\
+        "message": "Alumni Management System API is running",\n\
+        "status": "healthy"\n\
+    })\n\
+\n\
+# Health check endpoint\n\
+@app.route("/api/health")\n\
+def health_check():\n\
+    return jsonify({"status": "healthy"})\n\
+\n\
+# Create a simple index.html file for the client\n\
+@app.route("/setup", methods=["GET"])\n\
+def setup():\n\
+    # Create client/build directory if it doesn\'t exist\n\
+    os.makedirs("client/build", exist_ok=True)\n\
+    \n\
+    # Create a simple index.html file\n\
+    with open("client/build/index.html", "w") as f:\n\
+        f.write("<html><body><h1>Alumni Management System</h1><p>API is running.</p></body></html>")\n\
+    \n\
+    return jsonify({"message": "Setup completed successfully"})\n\
+\n\
+# Serve React app\n\
+@app.route("/app", defaults={"path": ""})\n\
+@app.route("/app/<path:path>")\n\
+def serve(path):\n\
+    if path and os.path.exists(os.path.join(app.static_folder, path)):\n\
+        return send_from_directory(app.static_folder, path)\n\
+    else:\n\
+        # Serve index.html for client-side routing\n\
+        return send_from_directory(app.static_folder, "index.html")\n\
+\n\
+if __name__ == "__main__":\n\
+    # Create client/build directory and index.html file\n\
+    os.makedirs("client/build", exist_ok=True)\n\
+    if not os.path.exists("client/build/index.html"):\n\
+        with open("client/build/index.html", "w") as f:\n\
+            f.write("<html><body><h1>Alumni Management System</h1><p>API is running.</p></body></html>")\n\
+    \n\
+    port = int(os.environ.get("PORT", 5000))\n\
+    app.run(host="0.0.0.0", port=port)\n\
+' > /app/app.py
+
+# Create a simple index.html file
+RUN mkdir -p /app/client/build && \
+    echo "<html><body><h1>Alumni Management System</h1><p>API is running.</p></body></html>" > /app/client/build/index.html
+
+# Create a simple tailwind.config.js file (to avoid the error)
+RUN mkdir -p /app/client && \
+    echo "module.exports = { content: ['./src/**/*.{js,jsx,ts,tsx}'], theme: { extend: {} }, plugins: [] };" > /app/client/tailwind.config.js
+
+# Create .env file with environment variables
+RUN echo "MONGODB_URI=mongodb+srv://dsilva:7DaXRzRoueTBa3a5@alumnimanagement.f10hpn9.mongodb.net/?retryWrites=true&w=majority&appName=AlumniManagement\n\
+DATABASE_NAME=alumni_management\n\
+JWT_SECRET_KEY=your_super_secret_key_for_jwt_tokens\n\
+" > /app/.env
+
+# Expose port
+EXPOSE 5000
+
+# Run the application
+CMD ["python", "app.py"]

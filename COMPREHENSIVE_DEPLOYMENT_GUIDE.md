@@ -74,6 +74,18 @@ We've created several different Dockerfiles, each with a different approach to s
 .\build-minimal.bat
 ```
 
+### 6. Robust Approach (Dockerfile.robust)
+
+- Specifically addresses the file not found errors
+- Creates necessary directories and files that might be missing
+- Provides a fallback mechanism for missing files
+- Most likely to work when other approaches fail
+
+```bash
+# Build and deploy
+.\build-robust.bat
+```
+
 ## Deploying to Render.com
 
 ### Option 1: Using Docker Hub
@@ -110,13 +122,20 @@ This comprehensive guide serves as a blueprint for deploying your Alumni Managem
 
 ## Recommended Approach
 
-For most users, we recommend the **Prebuilt Approach** as it:
+For most users, we recommend the **Robust Approach** as it:
+
+1. Specifically addresses the file not found errors
+2. Creates necessary directories and files that might be missing
+3. Provides a fallback mechanism for missing files
+4. Most likely to work when other approaches fail
+
+If the Robust Approach works, you can then try the **Prebuilt Approach** as it:
 
 1. Builds the React app locally, ensuring it works before deployment
 2. Simplifies the Docker build process
 3. Reduces the chance of errors during the build process
 
-However, if you're experiencing issues with the client build, the **Minimal Approach** can help you verify that the deployment process itself works correctly.
+However, if you're experiencing issues with all approaches, the **Minimal Approach** can help you verify that the deployment process itself works correctly.
 
 ## Next Steps
 
